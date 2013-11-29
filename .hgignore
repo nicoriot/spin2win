@@ -1,3 +1,4 @@
 syntax: glob
 *.asv
 .DS_Store
+*~
