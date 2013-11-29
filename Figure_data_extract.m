@@ -1,6 +1,8 @@
 % Figure data extractor for subplotted figures
 % custom made to extract Spin2Win figure data.
 
+% Currently standalone, to be implemented into a data extraction tool.
+
 % get open figure handle number
 hand = gcf;
 

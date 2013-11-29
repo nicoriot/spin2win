@@ -1,2 +1,4 @@
 syntax: glob
 *.asv
+*.txt
+mout.mat
