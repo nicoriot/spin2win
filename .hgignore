@@ -1,4 +1,7 @@
 syntax: glob
 *.asv
+.DS_Store
+*~
 *.txt
 mout.mat
+
