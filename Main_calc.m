@@ -33,7 +33,7 @@ step  =  0.000001   ;  % [m] Radial step size used in calculations
 r = min(d.ri):step:max(d.ro); % radial vector
 
 % Preallocating vectors
-d.m     = length(d.ri);
+% d.m     = length(d.ri); -maybe not needed due to line 12
 dr      = zeros(1,d.m);
 Ten_c   = zeros(3,length(r));   
 Ten_r   = zeros(3,length(r));
@@ -69,6 +69,7 @@ e.Er    = d.Er;
 e.v_cr  = d.v;
 e.p     = d.p;
 e.G_rz  = d.G_rz;
+e.C     = d.C;
 e.h     = d.hh;
 e.n     = d.n;
 e.n_    = d.n_;
@@ -260,7 +261,7 @@ for i=1:1:2
 end
 
 % Calculate mass and energy of system using E_M_calc subroutine
-[Energy, Mass] = Energy_Mass_calc(e);
+[Energy, Mass, Cost] = Energy_Mass_calc(e);
 
 
 % Print data to screen and save into logfile named after the current date
@@ -348,30 +349,31 @@ for k = 1:1:d.m-1
     disp(['Shell ', num2str(k), '-' , num2str(k+1), ': ', num2str(F), ' [kNm]']) 
 end
 disp('--------------------------------------------------')
-disp('Shell and system mass:')
+
+disp('Shell and system MASS:')
 %Repeat for number of shells
 for k = 1:1:d.m
     disp(['Shell ', num2str(k), ': ', num2str(Mass(k)), ' [kg]']) 
 end
 disp(['Total: ', num2str(Mass(d.m+1)), ' [kg]']) 
 disp('--------------------------------------------------')
-disp('Stored energy:')
-disp(['in total: ', num2str(Energy(1)/3600), ' [Wh]']) 
-disp(['in rpm interval: ', num2str(Energy(2)/3600), ' [Wh]']) 
+
+disp('Shell and system ENERGY:')
+%Repeat for number of shells
+for k = 1:1:d.m
     disp(['Shell ', num2str(k), ': ', num2str(Energy(k)/3600), ' [Wh]']) 
 end
-disp(['Total: ', num2str(Energy(m+1)/3600), ' [Wh]']) 
-disp(['Total per kg: ', num2str(Energy(m+2)/3600), ' [Wh/kg]'])
-
+disp(['Total: ', num2str(Energy(d.m+1)/3600), ' [Wh]']) 
+disp(['Total per kg: ', num2str(Energy(d.m+2)/3600), ' [Wh/kg]'])
 disp('--------------------------------------------------')
 
 disp('Shell and system COST:')
 %Repeat for number of shells
-for k = 1:1:m
+for k = 1:1:d.m
     disp(['Shell ', num2str(k), ': ', num2str(Cost(k)), ' [$]']) 
 end
-disp(['Total: ', num2str(Cost(m+1)), ' [$]']) 
-disp(['Total per Wh: ', num2str(Cost(m+2)*3600), ' [$/Wh]'])
+disp(['Total: ', num2str(Cost(d.m+1)), ' [$]']) 
+disp(['Total per Wh: ', num2str(Cost(d.m+2)*3600), ' [$/Wh]'])
 disp('--------------------------------------------------')
 
 

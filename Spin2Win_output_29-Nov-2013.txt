@@ -533,3 +533,281 @@ End of output
 
 
 
+Date and time of run: 29-Nov-2013 21:44:14, No name
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 8000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 203.5469 [MPa]
+Minimal tension, hoop: 21.1879 [MPa]
+Maximal tension, radial: 0.5444 [MPa]
+Minimal tension, radial: 2.2352e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 350.6615 [MPa]
+Minimal tension, hoop: -366.24 [MPa]
+Maximal tension, radial: 5.0291e-014 [MPa]
+Minimal tension, radial: -89.1317 [MPa]
+Interference pressures:
+Shell 1-2: 71.7319 [MPa]
+Shell 2-3: 89.1317 [MPa]
+Shell 3-4: 85.1089 [MPa]
+Shell 4-5: 72.4556 [MPa]
+Shell 5-6: 56.7601 [MPa]
+Shell 6-7: 40.6546 [MPa]
+Shell 7-8: 25.4349 [MPa]
+Shell 8-9: 11.7496 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1293.8946 [kNm]
+Shell 2-3: 2313.6214 [kNm]
+Shell 3-4: 3005.5377 [kNm]
+Shell 4-5: 3340.7799 [kNm]
+Shell 5-6: 3311.3392 [kNm]
+Shell 6-7: 2927.4425 [kNm]
+Shell 7-8: 2215.7275 [kNm]
+Shell 8-9: 1217.9238 [kNm]
+--------------------------------------------------
+Shell and system MASS:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Shell and system ENERGY:
+Shell 1: 16.1486 [Wh]
+Shell 2: 29.3454 [Wh]
+Shell 3: 48.3036 [Wh]
+Shell 4: 74.0699 [Wh]
+Shell 5: 107.691 [Wh]
+Shell 6: 150.2134 [Wh]
+Shell 7: 202.6836 [Wh]
+Shell 8: 266.1484 [Wh]
+Shell 9: 337.8555 [Wh]
+Total: 1232.4593 [Wh]
+Total per kg: 4.8409 [Wh/kg]
+--------------------------------------------------
+Shell and system COST:
+{??? Undefined function or variable 'm'.
+
+Error in ==> <a href="matlab: opentoline('D:\Tobias\Mercurial\Spin2Win\Main_calc.m',372,0)">Main_calc at 372</a>
+for k = 1:1:m
+
+Error in ==> <a href="matlab: opentoline('D:\Tobias\Mercurial\Spin2Win\Spin2Win_v2.m',93,0)">Spin2Win_v2>pushbutton1_Callback at 93</a>
+[mout] = Main_calc(senddat,prefix);
+
+Error in ==> <a href="matlab: opentoline('D:\Tobias\Matlab\toolbox\matlab\guide\gui_mainfcn.m',96,0)">gui_mainfcn at 96</a>
+        feval(varargin{:});
+
+Error in ==> <a href="matlab: opentoline('D:\Tobias\Mercurial\Spin2Win\Spin2Win_v2.m',42,0)">Spin2Win_v2 at 42</a>
+    gui_mainfcn(gui_State, varargin{:});
+
+Error in ==>
+@(hObject,eventdata)Spin2Win_v2('pushbutton1_Callback',hObject,eventdata,guidata(hObject))
+
+} 
+??? Error while evaluating uicontrol Callback
+
+
+<a href = "matlab: helpview([docroot '/toolbox/optim/msg_csh/optim_msg_csh.map'],'eqn_solved','CSHelpWindow');">Equation solved</a>.
+
+fsolve completed because the vector of function values is near zero
+as measured by the selected value of the <a href = "matlab: helpview([docroot '/toolbox/optim/msg_csh/optim_msg_csh.map'],'fcn_tolerance_fsolve','CSHelpWindow');">function tolerance</a>, and
+the <a href = "matlab: helpview([docroot '/toolbox/optim/msg_csh/optim_msg_csh.map'],'appears_regular','CSHelpWindow');">problem appears regular</a> as measured by the gradient.
+
+<<a href = "matlab: createExitMsg('trustnleqn',1.000000e+000,true,true,'fsolve',4.071009e-010,'selected',1.000000e-009,7.638359e-011,'selected',3.162278e-005);">stopping criteria details</a>>
+
+
+<a href = "matlab: helpview([docroot '/toolbox/optim/msg_csh/optim_msg_csh.map'],'eqn_solved','CSHelpWindow');">Equation solved</a>.
+
+fsolve completed because the vector of function values is near zero
+as measured by the selected value of the <a href = "matlab: helpview([docroot '/toolbox/optim/msg_csh/optim_msg_csh.map'],'fcn_tolerance_fsolve','CSHelpWindow');">function tolerance</a>, and
+the <a href = "matlab: helpview([docroot '/toolbox/optim/msg_csh/optim_msg_csh.map'],'appears_regular','CSHelpWindow');">problem appears regular</a> as measured by the gradient.
+
+<<a href = "matlab: createExitMsg('trustnleqn',1.000000e+000,true,true,'fsolve',7.157464e-016,'selected',1.000000e-009,3.716854e-022,'selected',3.162278e-005);">stopping criteria details</a>>
+
+Date and time of run: 29-Nov-2013 21:45:08, No name
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 8000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 203.5469 [MPa]
+Minimal tension, hoop: 21.1879 [MPa]
+Maximal tension, radial: 0.5444 [MPa]
+Minimal tension, radial: 2.2352e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 350.6615 [MPa]
+Minimal tension, hoop: -366.24 [MPa]
+Maximal tension, radial: 5.0291e-014 [MPa]
+Minimal tension, radial: -89.1317 [MPa]
+Interference pressures:
+Shell 1-2: 71.7319 [MPa]
+Shell 2-3: 89.1317 [MPa]
+Shell 3-4: 85.1089 [MPa]
+Shell 4-5: 72.4556 [MPa]
+Shell 5-6: 56.7601 [MPa]
+Shell 6-7: 40.6546 [MPa]
+Shell 7-8: 25.4349 [MPa]
+Shell 8-9: 11.7496 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1293.8946 [kNm]
+Shell 2-3: 2313.6214 [kNm]
+Shell 3-4: 3005.5377 [kNm]
+Shell 4-5: 3340.7799 [kNm]
+Shell 5-6: 3311.3392 [kNm]
+Shell 6-7: 2927.4425 [kNm]
+Shell 7-8: 2215.7275 [kNm]
+Shell 8-9: 1217.9238 [kNm]
+--------------------------------------------------
+Shell and system MASS:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Shell and system ENERGY:
+Shell 1: 16.1486 [Wh]
+Shell 2: 29.3454 [Wh]
+Shell 3: 48.3036 [Wh]
+Shell 4: 74.0699 [Wh]
+Shell 5: 107.691 [Wh]
+Shell 6: 150.2134 [Wh]
+Shell 7: 202.6836 [Wh]
+Shell 8: 266.1484 [Wh]
+Shell 9: 337.8555 [Wh]
+Total: 1232.4593 [Wh]
+Total per kg: 4.8409 [Wh/kg]
+--------------------------------------------------
+Shell and system COST:
+Shell 1: 750.4562 [$]
+Shell 2: 917.0391 [$]
+Shell 3: 1083.6221 [$]
+Shell 4: 1250.205 [$]
+Shell 5: 1416.788 [$]
+Shell 6: 1583.3709 [$]
+Shell 7: 1749.9539 [$]
+Shell 8: 1916.5368 [$]
+Shell 9: 2061.6702 [$]
+Total: 12729.6423 [$]
+Total per Wh: 10.3287 [$/Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
