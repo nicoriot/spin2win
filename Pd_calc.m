@@ -1,41 +1,30 @@
 function [z] = Pd_calc(x,e,n)
 % Calculate reamaning interferance in geomitry with applied preasssures
 
-% Extract useful values from idat
-% e.m = idat(8,5);
-% e.ri = idat(1,1:1:e.m);
-% e.ro = idat(2,1:1:e.m);
-% e.Ec = idat(3,1:1:e.m);
-% e.Er = idat(4,1:1:e.m);
-% e.v_cr  = idat(5,1:1:e.m);
-% e.p  = idat(6,1:1:e.m);
-% e.G_rz = idat(9,1:1:e.m);
-
-
 % Preallocating vectors
-dr = zeros(1,e.m);
-Ten_c = zeros(1,e.m-1);
-Ten_r = zeros(1,e.m-1);
-Ten_z = zeros(1,e.m-1);
-u = zeros(1,e.m);
-Pi = zeros(1,e.m-1);
-Po = zeros(1,e.m-1);
-C1 = zeros(1,e.m);
-C2 = zeros(1,e.m);
-Q = zeros(1,e.m);
-Q2 = zeros(1,e.m);
-z = zeros(1,e.m-1);
-di = zeros(1,e.m-1);
-do = zeros(1,e.m-1);
-b = zeros(1,e.m);
-v_rc = zeros(1,e.m);
-v_rz = zeros(1,e.m);
-v_zr = zeros(1,e.m);
-v_zc = zeros(1,e.m);
-v_cz = zeros(1,e.m);
+dr      = zeros(1,e.m);
+Ten_c   = zeros(1,e.m-1);
+Ten_r   = zeros(1,e.m-1);
+Ten_z   = zeros(1,e.m-1);
+u       = zeros(1,e.m);
+Pi      = zeros(1,e.m-1);
+Po      = zeros(1,e.m-1);
+C1      = zeros(1,e.m);
+C2      = zeros(1,e.m);
+Q       = zeros(1,e.m);
+Q2      = zeros(1,e.m);
+z       = zeros(1,e.m-1);
+di      = zeros(1,e.m-1);
+do      = zeros(1,e.m-1);
+b       = zeros(1,e.m);
+v_rc    = zeros(1,e.m);
+v_rz    = zeros(1,e.m);
+v_zr    = zeros(1,e.m);
+v_zc    = zeros(1,e.m);
+v_cz    = zeros(1,e.m);
 
 % Useful relations
-w = 2*pi*n/60;                   % rpm to rad/sec conversion
+w = 2*pi*n/60; % rpm to rad/sec conversion
 
 % Calculate Possions ratios for a assumed transversely isotropic material
 for k = 1:1:e.m

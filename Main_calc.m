@@ -1,5 +1,5 @@
 function [out] = Main_calc(indata,prefix)
-% Preassure and stress calculator for composite and isotropic materials
+% Pressure and stress calculator for composite and isotropic materials
 
 %%% NOTE!!!!!!!!!!
 %This script needs the following m-file functions in order to work:
@@ -9,7 +9,7 @@ function [out] = Main_calc(indata,prefix)
 %%%%
 
 % Extract number of active shells from indata
-d.m = indata(8,5);%m = indata(8,5);
+d.m = indata(8,5);
 
 % Place the rest of indata into correct variables
 d.ri = indata(1,1:1:d.m)/2000; % [m] Inner radius, scale from mm, dia to m, radius
@@ -33,102 +33,84 @@ step  =  0.000001   ;  % [m] Radial step size used in calculations
 r = min(d.ri):step:max(d.ro); % radial vector
 
 % Preallocating vectors
-d.m = length(d.ri);
-dr = zeros(1,d.m);
-Ten_c = zeros(3,length(r));   
-Ten_r = zeros(3,length(r));
+d.m     = length(d.ri);
+dr      = zeros(1,d.m);
+Ten_c   = zeros(3,length(r));   
+Ten_r   = zeros(3,length(r));
 % Where: 1: Pressfit standstill stress, 2: Pure centrifugal stress,
 % 3: Pressfit with rotation
-intf = zeros(2,length(r));
+intf    = zeros(2,length(r));
 % Where: 1: Interface plot standstill, 2: Interface plot rotating
-Pd = zeros(1,d.m-1);            %interface preassure storage vector
-K = zeros(1,d.m-1);
-U = zeros(1,d.m-1);
-b = zeros(1,d.m);
-u = zeros(1,d.m);
-j = zeros(1,d.m);
-Ten_o = zeros(1,d.m);
-A = zeros(3*(d.m-1) , 3*(d.m-1)); 
-B = zeros(3*(d.m-1) , 1);
-Pd_still = zeros(1,d.m-1);
-r_mark = zeros(1,d.m);
-r_mark2 = zeros(1,d.m);
+Pd      = zeros(1,d.m-1);            %interface preassure storage vector
+K       = zeros(1,d.m-1);
+U       = zeros(1,d.m-1);
+b       = zeros(1,d.m);
+u       = zeros(1,d.m);
+j       = zeros(1,d.m);
+Ten_o   = zeros(1,d.m);
+A       = zeros(3*(d.m-1) , 3*(d.m-1)); 
+B       = zeros(3*(d.m-1) , 1);
+Pd_still      = zeros(1,d.m-1);
+r_mark        = zeros(1,d.m);
+r_mark2       = zeros(1,d.m);
 warning_flags = zeros(1,5);
-Ten_c_max = zeros(3,d.m);
-Ten_c_min = zeros(3,d.m);
-Ten_r_max = zeros(3,d.m);
-Ten_r_min = zeros(3,d.m);
-intf_max = zeros(2,d.m);
-intf_min = zeros(2,d.m);
+Ten_c_max     = zeros(3,d.m);
+Ten_c_min     = zeros(3,d.m);
+Ten_r_max     = zeros(3,d.m);
+Ten_r_min     = zeros(3,d.m);
+intf_max      = zeros(2,d.m);
+intf_min      = zeros(2,d.m);
 
-
-
-% Fill idat with input data and settings
-% for easy transport into subroutines
-% idat(1,1:1:d.m) = d.ri;
-% idat(2,1:1:d.m) = d.ro;
-% idat(3,1:1:d.m) = d.Ec;
-% idat(4,1:1:d.m) = d.Er;
-% idat(5,1:1:d.m) = d.v;
-% idat(6,1:1:d.m) = d.p;
-% idat(7,1:1:d.m) = d.uu;
-% idat(9,1:1:d.m) = d.G_rz;
-% idat(8,1)     = length(r);
-% idat(8,2)     = d.hh;
-% idat(8,3)     = d.n;
-% idat(8,4)     = d.n_;
-% idat(8,5)     = indata(8,5);
-
-e.m = d.m;
-e.ri = d.ri;
-e.ro = d.ro;
-e.Ec = d.Ec;
-e.Er = d.Er;
-e.v_cr = d.v;
-e.p = d.p;
-e.G_rz = d.G_rz;
-e.h = d.hh;
-e.n = d.n;
-e.n_ = d.n_;
-e.y = length(r);
+e.m     = d.m;
+e.ri    = d.ri;
+e.ro    = d.ro;
+e.Ec    = d.Ec;
+e.Er    = d.Er;
+e.v_cr  = d.v;
+e.p     = d.p;
+e.G_rz  = d.G_rz;
+e.h     = d.hh;
+e.n     = d.n;
+e.n_    = d.n_;
+e.y     = length(r);
 
 % Useful constant relations calcualtions
-w = 2*pi*d.n/60;    % rpm to rad/sec conversion
+w = 2*pi*d.n/60; % rpm to rad/sec conversion
 for k = 1:1:d.m
-% radius quota, used in equation
-b(k) = d.ri(k)/d.ro(k); 
+    % radius quota, used in equation
+    b(k) = d.ri(k)/d.ro(k); 
 
-% µ factor, used in equation
-u(k) = sqrt(d.Ec(k)/d.Er(k));
+    % µ factor, used in equation
+    u(k) = sqrt(d.Ec(k)/d.Er(k));
 
-% j factor, used in equations
-j(k) = (b(k)^(-u(k)-1)-b(k)^2)/(b(k)^(-u(k)-1)-b(k)^(u(k)-1));
+    % j factor, used in equations
+    j(k) = (b(k)^(-u(k)-1)-b(k)^2)/(b(k)^(-u(k)-1)-b(k)^(u(k)-1));
 
-% Unmodified centrifugal field
-Ten_o(k) = d.p(k)*w^2*d.ro(k)^2*((3+d.v(k))/(9-u(k)^2));
-
+    % Unmodified centrifugal field
+    Ten_o(k) = d.p(k)*w^2*d.ro(k)^2*((3+d.v(k))/(9-u(k)^2));
 end
 
 % Interface calculation between shells
 for i = 1:1:d.m-1
-dr(i) = d.ro(i)-d.ri(i+1);
-if abs(dr(i)) < 0.01*10^-6
-   dr(i) = 0.01*10^-6;
-   warning_flags(1) = 1;
+    dr(i) = d.ro(i)-d.ri(i+1);
+    if abs(dr(i)) < 0.01*10^-6
+        dr(i) = 0.01*10^-6;
+        warning_flags(1) = 1;
+    end
 end
-end
-% Make sure interferance is positive
+
+% Make sure interference is positive
 dr = abs(dr);
 
 % Calculate stresses due to pure centrifugal forces
-% using Ten_cr_calc subroutine wiht zero shell interference. 
+% using Ten_cr_calc subroutine with zero shell interference
 Pdz = zeros(1,d.m-1);
 
-    [Ten_c(2,1:1:length(r)), Ten_r(2,1:1:length(r)), ...
-    intf(2,1:1:length(r))] = Ten_cr_calc(Pdz,e,d.n);
+[Ten_c(2,1:1:length(r)), Ten_r(2,1:1:length(r)), ...
+intf(2,1:1:length(r))] = Ten_cr_calc(Pdz,e,d.n);
 
 %skip all pressfit calcualtions if there is less than 2 shells
-if d.m ~= 1    
+if d.m ~= 1
 
 % Calculate approximate preassures using 
 % a simple linear matrix. Based on standard pressfit formulas.
@@ -202,18 +184,18 @@ D = A\B;
 % Pd will be approximate now if a isotropic material is used.
 % Values will be used as input guess into fsolver for finetuning 
 %or major change if an orthotropic material is used  
-  Pd_t = 0;
-  for k = 1:1:d.m-1
-  Pd_t(k) = D(k);
-  end
+Pd_t = 0;
+for k = 1:1:d.m-1
+    Pd_t(k) = D(k);
+end
   
-% Copy values to preassure vector
-  Pd = Pd_t;
+% Copy values to pressure vector
+Pd = Pd_t;
 
-% Special Fsolve settings for increased chance of convergance 
+% Special Fsolve settings for increased chance of convergence 
 options = optimset('TolFun',1e-9,'TolFun',1e-9);
 
-% Finetune preassure guess from above matrix calcualtions
+% Finetune pressure guess from above matrix calculations
 % by using fsolve on Pd_calc subroutine
 % n = 0 for standstill curve
 [Pd, ~,warning_flags(4)] = fsolve(@(x) Pd_calc(x,e,0),Pd,options);
@@ -222,7 +204,7 @@ Pd_still = Pd;
 % Calcualte the stresses in standstill case
 % with the Ten_cr_calc subroutine
 [Ten_c(1,1:1:length(r)), Ten_r(1,1:1:length(r)), ...
-intf(1,1:1:length(r))] = Ten_cr_calc(Pd,e,0);
+    intf(1,1:1:length(r))] = Ten_cr_calc(Pd,e,0);
 
 % Reset Pd to previous approximate values for next run
 Pd = Pd_t;
@@ -234,7 +216,6 @@ Pd = Pd_t;
 % with the Ten_cr_calc subroutine
 [Ten_c(3,1:1:length(r)), Ten_r(3,1:1:length(r)), ...
      intf(2,1:1:length(r))] = Ten_cr_calc(Pd,e,d.n);
-
 end % end for if statement about number of shells
 
 % Sacling from Pa to MPa for easier enterpritation
@@ -279,7 +260,7 @@ for i=1:1:2
 end
 
 % Calculate mass and energy of system using E_M_calc subroutine
-[Energy, Mass] = E_M_calc(e);
+[Energy, Mass] = Energy_Mass_calc(e);
 
 
 % Print data to screen and save into logfile named after the current date

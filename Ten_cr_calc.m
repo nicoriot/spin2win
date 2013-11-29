@@ -1,17 +1,6 @@
 function [ Ten_c, Ten_r, intf ] = Ten_cr_calc(x,e,n)
 %Calculates hoop and radial stresses of a spinning cylinder
 
-% Extract values from idat
-% e.m = idat(8,5);
-% e.ri = idat(1,1:1:e.m);
-% e.ro = idat(2,1:1:e.m);
-% e.Ec = idat(3,1:1:e.m);
-% e.Er = idat(4,1:1:e.m);
-% e.v_cr  = idat(5,1:1:e.m);
-% e.p  = idat(6,1:1:e.m);
-% e.y  = idat(8,1);
-% e.G_rz = idat(9,1:1:e.m);
-
 % Preallocating vectors
 u = zeros(1,e.m);
 Pi = zeros(1,e.m-1);
