@@ -1,0 +1,264 @@
+Date and time of run: 10-May-2012 16:16:12, No name
+Input data:
+Ri: 0.05
+Ro: 0.15
+Ec: 7.2e+010
+Er: 7.2e+010
+v: 0.33
+p: 2800
+µ: 0.61
+G: 2.8e+010
+lr: 100001
+h: 0.15
+n: 30000
+n_: 3000
+sh: 1
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 547.4827 [MPa]
+Minimal tension, hoop: 142.2876 [MPa]
+Maximal tension, radial: 119.6561 [MPa]
+Minimal tension, radial: 2.9802e-013 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 26.3894 [kg]
+Total: 26.3894 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 452.1749 [Wh]
+in rpm interval: 447.6531 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Standstill pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+*************WARNING******WARNING**************
+Warning: Rotating pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 10-May-2012 16:21:46, No name
+Input data:
+Ri: 0.05
+Ro: 0.15
+Ec: 7.2e+010
+Er: 7.2e+010
+v: 0.33
+p: 2800
+µ: 0.61
+G: 2.8e+010
+lr: 100001
+h: 0.15
+n: 22000
+n_: 3000
+sh: 1
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 294.424 [MPa]
+Minimal tension, hoop: 76.5191 [MPa]
+Maximal tension, radial: 64.3484 [MPa]
+Minimal tension, radial: 1.4529e-013 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 26.3894 [kg]
+Total: 26.3894 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 243.1696 [Wh]
+in rpm interval: 238.6478 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Standstill pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+*************WARNING******WARNING**************
+Warning: Rotating pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 10-May-2012 16:44:02, No name
+Input data:
+Ri: 0.05
+Ro: 0.15
+Ec: 7.2e+010
+Er: 7.2e+010
+v: 0.33
+p: 2800
+µ: 0.61
+G: 2.8e+010
+lr: 100001
+h: 0.15
+n: 22000
+n_: 3000
+sh: 1
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 294.424 [MPa]
+Minimal tension, hoop: 76.5191 [MPa]
+Maximal tension, radial: 64.3484 [MPa]
+Minimal tension, radial: 1.4529e-013 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 26.3894 [kg]
+Total: 26.3894 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 243.1696 [Wh]
+in rpm interval: 238.6478 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Standstill pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+*************WARNING******WARNING**************
+Warning: Rotating pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 10-May-2012 16:49:58, No name
+Input data:
+Ri: 0.05
+Ro: 0.15
+Ec: 7.2e+010
+Er: 7.2e+010
+v: 0.33
+p: 2800
+µ: 0.61
+G: 2.8e+010
+lr: 100001
+h: 0.15
+n: 22000
+n_: 3000
+sh: 1
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 294.424 [MPa]
+Minimal tension, hoop: 76.5191 [MPa]
+Maximal tension, radial: 64.3484 [MPa]
+Minimal tension, radial: 1.4529e-013 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 26.3894 [kg]
+Total: 26.3894 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 243.1696 [Wh]
+in rpm interval: 238.6478 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Standstill pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+*************WARNING******WARNING**************
+Warning: Rotating pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+

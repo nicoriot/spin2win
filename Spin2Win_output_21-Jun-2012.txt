@@ -1,0 +1,140 @@
+Date and time of run: 21-Jun-2012 13:44:45, Case 3
+Input data:
+Ri: 0.05              0.1             0.15
+Ro: 0.10025         0.150125            0.175
+Ec: 7.2e+010        5.46e+010       1.551e+011
+Er: 7.2e+010        1.69e+010        1.11e+010
+v: 0.33             0.25            0.296
+p: 2800             2146             1594
+µ: 0.5              0.5                0
+G: 2.8e+010       4980000000       3650000000
+lr: 125001
+h: 0.25
+n: 22000
+n_: 10000
+sh: 3
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 248.5688 [MPa]
+Minimal tension, hoop: 52.2406 [MPa]
+Maximal tension, radial: 16.2815 [MPa]
+Minimal tension, radial: 7.0781e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 202.7099 [MPa]
+Minimal tension, hoop: -162.5138 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: -61.1888 [MPa]
+Interference pressures:
+Shell 1-2: 61.19 [MPa]
+Shell 2-3: 28.9362 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 386.2988 [MPa]
+Minimal tension, hoop: 48.2951 [MPa]
+Maximal tension, radial: 14.7277 [MPa]
+Minimal tension, radial: -19.6591 [MPa]
+Interference pressures:
+Shell 1-2: 2.3619 [MPa]
+Shell 2-3: 19.6605 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 4817.8658 [kN]
+Shell 2-3: 3411.8019 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 482.991 [kNm]
+Shell 2-3: 512.1968 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 18.6429 [kNm]
+Shell 2-3: 348.0092 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 16.6035 [kg]
+Shell 2: 21.1315 [kg]
+Shell 3: 10.1719 [kg]
+Total: 47.9069 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 529.4103 [Wh]
+in rpm interval: 420.028 [Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 21-Jun-2012 15:14:23, Case 3
+Input data:
+Ri: 0.05              0.1             0.15
+Ro: 0.10025         0.150125            0.175
+Ec: 7.2e+010        5.46e+010       1.551e+011
+Er: 7.2e+010        1.69e+010        1.11e+010
+v: 0.33             0.25            0.296
+p: 2800             2146             1594
+µ: 0.5              0.5                0
+G: 2.8e+010       4980000000       3650000000
+lr: 125001
+h: 0.25
+n: 22000
+n_: 10000
+sh: 3
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 248.5688 [MPa]
+Minimal tension, hoop: 52.2406 [MPa]
+Maximal tension, radial: 16.2815 [MPa]
+Minimal tension, radial: 7.0781e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 202.7099 [MPa]
+Minimal tension, hoop: -162.5138 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: -61.1888 [MPa]
+Interference pressures:
+Shell 1-2: 61.19 [MPa]
+Shell 2-3: 28.9362 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 386.2988 [MPa]
+Minimal tension, hoop: 48.2951 [MPa]
+Maximal tension, radial: 14.7277 [MPa]
+Minimal tension, radial: -19.6591 [MPa]
+Interference pressures:
+Shell 1-2: 2.3619 [MPa]
+Shell 2-3: 19.6605 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 4817.8658 [kN]
+Shell 2-3: 3411.8019 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 482.991 [kNm]
+Shell 2-3: 512.1968 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 18.6429 [kNm]
+Shell 2-3: 348.0092 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 16.6035 [kg]
+Shell 2: 21.1315 [kg]
+Shell 3: 10.1719 [kg]
+Total: 47.9069 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 529.4103 [Wh]
+in rpm interval: 420.028 [Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+

@@ -1,0 +1,35 @@
+function [texten, Dat_line] = ReadFile(infile)
+% Syntax:
+% [Loaded text, Beginning of run line marks] =
+% ReadFile(Filen)
+if infile == 0
+    texten = -1;
+    Dat_line = -1;
+else
+fid = fopen(infile);
+k = 1;
+while ~feof(fid)
+    tline = fgetl(fid);
+    texten(k,1) = cellstr(tline);
+    k=k+1;   
+end
+
+fclose(fid);
+al = 'Date and time of run:';
+i = 1;
+
+for k=1:1:length(texten)
+
+    A = sscanf(char(texten(k)), '%c', [1 21]);
+    
+    if strcmp(A, al)
+        Dat_line(i) = k;
+        i =i+1;
+    end
+end
+%Swap Dat_line direction
+Dat_line(length(Dat_line):-1:1) = Dat_line;
+end
+
+end
+        

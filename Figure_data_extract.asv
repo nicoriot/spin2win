@@ -1,0 +1,45 @@
+% Figure data extractor for subplotted figures
+% custom made to extract Spin2Win figure data.
+
+% get open figure handle number
+hand = gcf;
+
+% Get all data
+alldat = findall(hand,'Type','line');
+
+% Get all x-data
+x_all=get(alldat,'Xdata');
+
+% Get all y-data
+y_all=get(alldat,'YData');
+
+% Find double locations
+i = 1;
+x_spot = 0;
+for k=[1:length(x_all)]
+tmp = x_all(k,:);
+tmp = cell2mat(tmp);
+if length(tmp)>1
+    x_spot(i)=k;
+    i=i+1;
+end
+end
+
+i = 1;
+y_spot = 0;
+for k=[1:length(y_all)]
+tmp = y_all(k,:);
+tmp = cell2mat(tmp);
+if length(tmp)>1
+    y_spot(i)=k;
+    i=i+1;
+end
+end
+
+% Extract plot data
+
+for [1:length(x_spot)]
+    
+
+
+x3=cell2mat(x3);
