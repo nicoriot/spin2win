@@ -1,0 +1,1981 @@
+Date and time of run: 29-Nov-2013 18:09:44, mugg og lohh
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 8000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 203.5469 [MPa]
+Minimal tension, hoop: 21.1879 [MPa]
+Maximal tension, radial: 0.5444 [MPa]
+Minimal tension, radial: 2.2352e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 350.6615 [MPa]
+Minimal tension, hoop: -366.24 [MPa]
+Maximal tension, radial: 5.0291e-014 [MPa]
+Minimal tension, radial: -89.1317 [MPa]
+Interference pressures:
+Shell 1-2: 71.7319 [MPa]
+Shell 2-3: 89.1317 [MPa]
+Shell 3-4: 85.1089 [MPa]
+Shell 4-5: 72.4556 [MPa]
+Shell 5-6: 56.7601 [MPa]
+Shell 6-7: 40.6546 [MPa]
+Shell 7-8: 25.4349 [MPa]
+Shell 8-9: 11.7496 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1293.8946 [kNm]
+Shell 2-3: 2313.6214 [kNm]
+Shell 3-4: 3005.5377 [kNm]
+Shell 4-5: 3340.7799 [kNm]
+Shell 5-6: 3311.3392 [kNm]
+Shell 6-7: 2927.4425 [kNm]
+Shell 7-8: 2215.7275 [kNm]
+Shell 8-9: 1217.9238 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 1434.1345 [Wh]
+in rpm interval: 1232.4593 [Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:10:13, mugg og lohh 30k
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 50000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 7951.0522 [MPa]
+Minimal tension, hoop: 827.6531 [MPa]
+Maximal tension, radial: 21.2654 [MPa]
+Minimal tension, radial: 6.5565e-013 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 6584.9582 [MPa]
+Minimal tension, hoop: 2016.5418 [MPa]
+Maximal tension, radial: 1571.0441 [MPa]
+Minimal tension, radial: 1.7881e-013 [MPa]
+Interference pressures:
+Shell 1-2: -986.026 [MPa]
+Shell 2-3: -1417.9655 [MPa]
+Shell 3-4: -1563.0099 [MPa]
+Shell 4-5: -1533.3199 [MPa]
+Shell 5-6: -1382.8599 [MPa]
+Shell 6-7: -1140.3113 [MPa]
+Shell 7-8: -822.1242 [MPa]
+Shell 8-9: -438.3201 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: -17785.8578 [kNm]
+Shell 2-3: -36806.5894 [kNm]
+Shell 3-4: -55196.1439 [kNm]
+Shell 4-5: -70698.2678 [kNm]
+Shell 5-6: -80674.9552 [kNm]
+Shell 6-7: -82111.2296 [kNm]
+Shell 7-8: -71618.1394 [kNm]
+Shell 8-9: -45434.7704 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 56020.8791 [Wh]
+in rpm interval: 55819.204 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Rotating interference pressure have gone negative,
+calculations higly unstable and mostly broken.
+Reduce speed or increase interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:11:26, mugg og lohh 30k
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 30000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 2862.3788 [MPa]
+Minimal tension, hoop: 297.9551 [MPa]
+Maximal tension, radial: 7.6556 [MPa]
+Minimal tension, radial: 2.3842e-013 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 2019.3108 [MPa]
+Minimal tension, hoop: 899.7564 [MPa]
+Maximal tension, radial: 487.1503 [MPa]
+Minimal tension, radial: 5.9605e-014 [MPa]
+Interference pressures:
+Shell 1-2: -291.2753 [MPa]
+Shell 2-3: -428.0822 [MPa]
+Shell 3-4: -480.5016 [MPa]
+Shell 4-5: -478.6234 [MPa]
+Shell 5-6: -437.2967 [MPa]
+Shell 6-7: -364.6359 [MPa]
+Shell 7-8: -265.4351 [MPa]
+Shell 8-9: -142.7078 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: -5254.0007 [kNm]
+Shell 2-3: -11111.8697 [kNm]
+Shell 3-4: -16968.4384 [kNm]
+Shell 4-5: -22068.3514 [kNm]
+Shell 5-6: -25511.5434 [kNm]
+Shell 6-7: -26256.601 [kNm]
+Shell 7-8: -23122.9887 [kNm]
+Shell 8-9: -14792.6067 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 20167.5165 [Wh]
+in rpm interval: 19965.8413 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Rotating interference pressure have gone negative,
+calculations higly unstable and mostly broken.
+Reduce speed or increase interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:11:49, mugg og lohh 30k
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 20000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 1272.1684 [MPa]
+Minimal tension, hoop: 132.4245 [MPa]
+Maximal tension, radial: 3.4025 [MPa]
+Minimal tension, radial: 1.1921e-013 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 687.1724 [MPa]
+Minimal tension, hoop: 468.077 [MPa]
+Maximal tension, radial: 150.0441 [MPa]
+Minimal tension, radial: 7.4506e-014 [MPa]
+Interference pressures:
+Shell 1-2: -74.1657 [MPa]
+Shell 2-3: -118.7437 [MPa]
+Shell 3-4: -142.2178 [MPa]
+Shell 4-5: -149.0307 [MPa]
+Shell 5-6: -141.8082 [MPa]
+Shell 6-7: -122.2373 [MPa]
+Shell 7-8: -91.4698 [MPa]
+Shell 8-9: -50.329 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: -1337.7954 [kNm]
+Shell 2-3: -3082.2697 [kNm]
+Shell 3-4: -5022.2804 [kNm]
+Shell 4-5: -6871.5025 [kNm]
+Shell 5-6: -8272.9773 [kNm]
+Shell 6-7: -8802.0295 [kNm]
+Shell 7-8: -7968.2542 [kNm]
+Shell 8-9: -5216.9306 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 8963.3407 [Wh]
+in rpm interval: 8761.6655 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Rotating interference pressure have gone negative,
+calculations higly unstable and mostly broken.
+Reduce speed or increase interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:12:08, mugg og lohh 30k
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 10000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 318.0421 [MPa]
+Minimal tension, hoop: 33.1061 [MPa]
+Maximal tension, radial: 0.85062 [MPa]
+Minimal tension, radial: 2.9802e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 381.8773 [MPa]
+Minimal tension, hoop: -263.513 [MPa]
+Maximal tension, radial: 1.4901e-013 [MPa]
+Minimal tension, radial: -66.8594 [MPa]
+Interference pressures:
+Shell 1-2: 56.1 [MPa]
+Shell 2-3: 66.8594 [MPa]
+Shell 3-4: 60.7525 [MPa]
+Shell 4-5: 48.7249 [MPa]
+Shell 5-6: 35.4849 [MPa]
+Shell 6-7: 23.2019 [MPa]
+Shell 7-8: 12.9094 [MPa]
+Shell 8-9: 5.0983 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1011.9278 [kNm]
+Shell 2-3: 1735.4902 [kNm]
+Shell 3-4: 2145.4143 [kNm]
+Shell 4-5: 2246.6068 [kNm]
+Shell 5-6: 2070.1625 [kNm]
+Shell 6-7: 1670.7134 [kNm]
+Shell 7-8: 1124.5866 [kNm]
+Shell 8-9: 528.4751 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 2240.8352 [Wh]
+in rpm interval: 2039.16 [Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:12:32, mugg og lohh
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 8000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 203.5469 [MPa]
+Minimal tension, hoop: 21.1879 [MPa]
+Maximal tension, radial: 0.5444 [MPa]
+Minimal tension, radial: 2.2352e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 350.6615 [MPa]
+Minimal tension, hoop: -366.24 [MPa]
+Maximal tension, radial: 5.0291e-014 [MPa]
+Minimal tension, radial: -89.1317 [MPa]
+Interference pressures:
+Shell 1-2: 71.7319 [MPa]
+Shell 2-3: 89.1317 [MPa]
+Shell 3-4: 85.1089 [MPa]
+Shell 4-5: 72.4556 [MPa]
+Shell 5-6: 56.7601 [MPa]
+Shell 6-7: 40.6546 [MPa]
+Shell 7-8: 25.4349 [MPa]
+Shell 8-9: 11.7496 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1293.8946 [kNm]
+Shell 2-3: 2313.6214 [kNm]
+Shell 3-4: 3005.5377 [kNm]
+Shell 4-5: 3340.7799 [kNm]
+Shell 5-6: 3311.3392 [kNm]
+Shell 6-7: 2927.4425 [kNm]
+Shell 7-8: 2215.7275 [kNm]
+Shell 8-9: 1217.9238 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 1434.1345 [Wh]
+in rpm interval: 1232.4593 [Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:12:47, mugg og lohh 30k
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 10000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 318.0421 [MPa]
+Minimal tension, hoop: 33.1061 [MPa]
+Maximal tension, radial: 0.85062 [MPa]
+Minimal tension, radial: 2.9802e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 381.8773 [MPa]
+Minimal tension, hoop: -263.513 [MPa]
+Maximal tension, radial: 1.4901e-013 [MPa]
+Minimal tension, radial: -66.8594 [MPa]
+Interference pressures:
+Shell 1-2: 56.1 [MPa]
+Shell 2-3: 66.8594 [MPa]
+Shell 3-4: 60.7525 [MPa]
+Shell 4-5: 48.7249 [MPa]
+Shell 5-6: 35.4849 [MPa]
+Shell 6-7: 23.2019 [MPa]
+Shell 7-8: 12.9094 [MPa]
+Shell 8-9: 5.0983 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1011.9278 [kNm]
+Shell 2-3: 1735.4902 [kNm]
+Shell 3-4: 2145.4143 [kNm]
+Shell 4-5: 2246.6068 [kNm]
+Shell 5-6: 2070.1625 [kNm]
+Shell 6-7: 1670.7134 [kNm]
+Shell 7-8: 1124.5866 [kNm]
+Shell 8-9: 528.4751 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 2240.8352 [Wh]
+in rpm interval: 2039.16 [Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:14:43, mugg og lohh 30k
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 10000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 318.0421 [MPa]
+Minimal tension, hoop: 33.1061 [MPa]
+Maximal tension, radial: 0.85062 [MPa]
+Minimal tension, radial: 2.9802e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 381.8773 [MPa]
+Minimal tension, hoop: -263.513 [MPa]
+Maximal tension, radial: 1.4901e-013 [MPa]
+Minimal tension, radial: -66.8594 [MPa]
+Interference pressures:
+Shell 1-2: 56.1 [MPa]
+Shell 2-3: 66.8594 [MPa]
+Shell 3-4: 60.7525 [MPa]
+Shell 4-5: 48.7249 [MPa]
+Shell 5-6: 35.4849 [MPa]
+Shell 6-7: 23.2019 [MPa]
+Shell 7-8: 12.9094 [MPa]
+Shell 8-9: 5.0983 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1011.9278 [kNm]
+Shell 2-3: 1735.4902 [kNm]
+Shell 3-4: 2145.4143 [kNm]
+Shell 4-5: 2246.6068 [kNm]
+Shell 5-6: 2070.1625 [kNm]
+Shell 6-7: 1670.7134 [kNm]
+Shell 7-8: 1124.5866 [kNm]
+Shell 8-9: 528.4751 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 2240.8352 [Wh]
+in rpm interval: 2039.16 [Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:35:45, mugg og lohh 30k
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 10000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 318.0421 [MPa]
+Minimal tension, hoop: 33.1061 [MPa]
+Maximal tension, radial: 0.85062 [MPa]
+Minimal tension, radial: 2.9802e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 381.8773 [MPa]
+Minimal tension, hoop: -263.513 [MPa]
+Maximal tension, radial: 1.4901e-013 [MPa]
+Minimal tension, radial: -66.8594 [MPa]
+Interference pressures:
+Shell 1-2: 56.1 [MPa]
+Shell 2-3: 66.8594 [MPa]
+Shell 3-4: 60.7525 [MPa]
+Shell 4-5: 48.7249 [MPa]
+Shell 5-6: 35.4849 [MPa]
+Shell 6-7: 23.2019 [MPa]
+Shell 7-8: 12.9094 [MPa]
+Shell 8-9: 5.0983 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1011.9278 [kNm]
+Shell 2-3: 1735.4902 [kNm]
+Shell 3-4: 2145.4143 [kNm]
+Shell 4-5: 2246.6068 [kNm]
+Shell 5-6: 2070.1625 [kNm]
+Shell 6-7: 1670.7134 [kNm]
+Shell 7-8: 1124.5866 [kNm]
+Shell 8-9: 528.4751 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 2240.8352 [Wh]
+in rpm interval: 2039.16 [Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:39:46, mugg og lohh
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 1.55e+011        1.55e+011        1.55e+011        1.55e+011        1.55e+011        1.55e+011        1.55e+011        1.55e+011        1.55e+011
+Er: 9000000000       9000000000       9000000000       9000000000       9000000000       9000000000       9000000000       9000000000       9000000000
+v: 0.25             0.25             0.25             0.25             0.25             0.25             0.25             0.25             0.25
+p: 1600             1600             1600             1600             1600             1600             1600             1600             1600
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 3600000000       3600000000       3600000000       3600000000       3600000000       3600000000       3600000000       3600000000       3600000000
+C: 80                4                4               74                2                4                6                8                9
+lr: 225001
+h: 0.3
+n: 10000
+n_: 5000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 180.4366 [MPa]
+Minimal tension, hoop: 19.7627 [MPa]
+Maximal tension, radial: 0.45776 [MPa]
+Minimal tension, radial: -2.9802e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 283.6375 [MPa]
+Minimal tension, hoop: -370.9585 [MPa]
+Maximal tension, radial: 7.4506e-015 [MPa]
+Minimal tension, radial: -82.3038 [MPa]
+Interference pressures:
+Shell 1-2: 66.5407 [MPa]
+Shell 2-3: 81.6193 [MPa]
+Shell 3-4: 82.3045 [MPa]
+Shell 4-5: 77.0202 [MPa]
+Shell 5-6: 68.011 [MPa]
+Shell 6-7: 55.8431 [MPa]
+Shell 7-8: 40.5448 [MPa]
+Shell 8-9: 21.9487 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 390.6611 [MPa]
+Minimal tension, hoop: -317.7438 [MPa]
+Maximal tension, radial: -5.5879e-015 [MPa]
+Minimal tension, radial: -72.4631 [MPa]
+Interference pressures:
+Shell 1-2: 60.5402 [MPa]
+Shell 2-3: 72.4631 [MPa]
+Shell 3-4: 71.0763 [MPa]
+Shell 4-5: 64.5719 [MPa]
+Shell 5-6: 55.2974 [MPa]
+Shell 6-7: 44.0151 [MPa]
+Shell 7-8: 30.9809 [MPa]
+Shell 8-9: 16.2678 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 9582.8736 [kN]
+Shell 2-3: 14100.6303 [kN]
+Shell 3-4: 16584.8978 [kN]
+Shell 4-5: 17734.0563 [kN]
+Shell 5-6: 17614.681 [kN]
+Shell 6-7: 16068.4774 [kN]
+Shell 7-8: 12831.9831 [kN]
+Shell 8-9: 7577.4593 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1200.2549 [kNm]
+Shell 2-3: 2118.6197 [kNm]
+Shell 3-4: 2906.5033 [kNm]
+Shell 4-5: 3551.2448 [kNm]
+Shell 5-6: 3967.7069 [kNm]
+Shell 6-7: 4021.1365 [kNm]
+Shell 7-8: 3532.0034 [kNm]
+Shell 8-9: 2275.1322 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1092.0195 [kNm]
+Shell 2-3: 1880.9482 [kNm]
+Shell 3-4: 2509.9895 [kNm]
+Shell 4-5: 2977.2794 [kNm]
+Shell 5-6: 3226.0042 [kNm]
+Shell 6-7: 3169.4256 [kNm]
+Shell 7-8: 2698.8589 [kNm]
+Shell 8-9: 1686.2663 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 8.5766 [kg]
+Shell 2: 10.4804 [kg]
+Shell 3: 12.3843 [kg]
+Shell 4: 14.2881 [kg]
+Shell 5: 16.1919 [kg]
+Shell 6: 18.0957 [kg]
+Shell 7: 19.9995 [kg]
+Shell 8: 21.9033 [kg]
+Shell 9: 23.5619 [kg]
+Total: 145.4816 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 1280.4772 [Wh]
+in rpm interval: 960.3579 [Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:47:07, mugg og lohh
+Input data:
+Ri: 0.1
+Ro: 0.12525
+Ec: 1.55e+011
+Er: 9000000000
+v: 0.25
+p: 1600
+µ: 0.61
+G: 3600000000
+C: 80
+lr: 25251
+h: 0.3
+n: 10000
+n_: 5000
+sh: 1
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 25.278 [MPa]
+Minimal tension, hoop: 19.7063 [MPa]
+Maximal tension, radial: 0.42899 [MPa]
+Minimal tension, radial: -3.7253e-015 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 8.5766 [kg]
+Total: 8.5766 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 16.7778 [Wh]
+in rpm interval: 12.5833 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Standstill pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+*************WARNING******WARNING**************
+Warning: Rotating pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:47:15, mugg og lohh
+Input data:
+Ri: 0.1
+Ro: 0.12525
+Ec: 1.55e+011
+Er: 9000000000
+v: 0.25
+p: 1600
+µ: 0.61
+G: 3600000000
+C: 80
+lr: 25251
+h: 0.3
+n: 30000
+n_: 5000
+sh: 1
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 227.5024 [MPa]
+Minimal tension, hoop: 177.357 [MPa]
+Maximal tension, radial: 3.8609 [MPa]
+Minimal tension, radial: -1.4901e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 8.5766 [kg]
+Total: 8.5766 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 151.0002 [Wh]
+in rpm interval: 146.8057 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Standstill pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+*************WARNING******WARNING**************
+Warning: Rotating pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:47:24, mugg og lohh
+Input data:
+Ri: 0.1
+Ro: 0.12525
+Ec: 1.55e+011
+Er: 9000000000
+v: 0.25
+p: 1600
+µ: 0.61
+G: 3600000000
+C: 80
+lr: 25251
+h: 0.3
+n: 80000
+n_: 5000
+sh: 1
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 1617.7952 [MPa]
+Minimal tension, hoop: 1261.2055 [MPa]
+Maximal tension, radial: 27.4551 [MPa]
+Minimal tension, radial: -2.3842e-013 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 8.5766 [kg]
+Total: 8.5766 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 1073.779 [Wh]
+in rpm interval: 1069.5846 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Standstill pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+*************WARNING******WARNING**************
+Warning: Rotating pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:47:46, mugg og lohh
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 30000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 2862.3788 [MPa]
+Minimal tension, hoop: 297.9551 [MPa]
+Maximal tension, radial: 7.6556 [MPa]
+Minimal tension, radial: 2.3842e-013 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 2019.3108 [MPa]
+Minimal tension, hoop: 899.7564 [MPa]
+Maximal tension, radial: 487.1503 [MPa]
+Minimal tension, radial: 5.9605e-014 [MPa]
+Interference pressures:
+Shell 1-2: -291.2753 [MPa]
+Shell 2-3: -428.0822 [MPa]
+Shell 3-4: -480.5016 [MPa]
+Shell 4-5: -478.6234 [MPa]
+Shell 5-6: -437.2967 [MPa]
+Shell 6-7: -364.6359 [MPa]
+Shell 7-8: -265.4351 [MPa]
+Shell 8-9: -142.7078 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: -5254.0007 [kNm]
+Shell 2-3: -11111.8697 [kNm]
+Shell 3-4: -16968.4384 [kNm]
+Shell 4-5: -22068.3514 [kNm]
+Shell 5-6: -25511.5434 [kNm]
+Shell 6-7: -26256.601 [kNm]
+Shell 7-8: -23122.9887 [kNm]
+Shell 8-9: -14792.6067 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 20167.5165 [Wh]
+in rpm interval: 19965.8413 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Rotating interference pressure have gone negative,
+calculations higly unstable and mostly broken.
+Reduce speed or increase interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 18:48:01, mugg og lohh
+Input data:
+Ri: 0.1
+Ro: 0.12525
+Ec: 7.2e+010
+Er: 7.2e+010
+v: 0.33
+p: 2800
+µ: 0.61
+G: 2.8e+010
+C: 50
+lr: 25251
+h: 0.3
+n: 30000
+n_: 3000
+sh: 1
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 412.9204 [MPa]
+Minimal tension, hoop: 296.9495 [MPa]
+Maximal tension, radial: 7.6545 [MPa]
+Minimal tension, radial: 2.3842e-013 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 0 [MPa]
+Minimal tension, hoop: 0 [MPa]
+Maximal tension, radial: 0 [MPa]
+Minimal tension, radial: 0 [MPa]
+Interference pressures:
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Total: 15.0091 [kg]
+--------------------------------------------------
+Stored energy:
+in total: 264.2503 [Wh]
+in rpm interval: 261.6078 [Wh]
+--------------------------------------------------
+*************WARNING******WARNING**************
+Warning: Standstill pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+*************WARNING******WARNING**************
+Warning: Rotating pressure calculation did not converge,
+Check input data for sign errors and interference
+*************WARNING******WARNING**************
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 19:27:00, No name
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 8000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 203.5469 [MPa]
+Minimal tension, hoop: 21.1879 [MPa]
+Maximal tension, radial: 0.5444 [MPa]
+Minimal tension, radial: 2.2352e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 350.6615 [MPa]
+Minimal tension, hoop: -366.24 [MPa]
+Maximal tension, radial: 5.0291e-014 [MPa]
+Minimal tension, radial: -89.1317 [MPa]
+Interference pressures:
+Shell 1-2: 71.7319 [MPa]
+Shell 2-3: 89.1317 [MPa]
+Shell 3-4: 85.1089 [MPa]
+Shell 4-5: 72.4556 [MPa]
+Shell 5-6: 56.7601 [MPa]
+Shell 6-7: 40.6546 [MPa]
+Shell 7-8: 25.4349 [MPa]
+Shell 8-9: 11.7496 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1293.8946 [kNm]
+Shell 2-3: 2313.6214 [kNm]
+Shell 3-4: 3005.5377 [kNm]
+Shell 4-5: 3340.7799 [kNm]
+Shell 5-6: 3311.3392 [kNm]
+Shell 6-7: 2927.4425 [kNm]
+Shell 7-8: 2215.7275 [kNm]
+Shell 8-9: 1217.9238 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Shell and system energy:
+Shell 1: 337.8555 [Wh]
+Shell 2: 0 [Wh]
+Shell 3: 0 [Wh]
+Shell 4: 0 [Wh]
+Shell 5: 0 [Wh]
+Shell 6: 0 [Wh]
+Shell 7: 0 [Wh]
+Shell 8: 0 [Wh]
+Shell 9: 0 [Wh]
+Total: 337.8555 [Wh]
+Total per kg: 1.327 [Wh/kg]
+--------------------------------------------------
+Shell and system cost:
+Shell 1: 750.4562 [$]
+Shell 2: 917.0391 [$]
+Shell 3: 1083.6221 [$]
+Shell 4: 1250.205 [$]
+Shell 5: 1416.788 [$]
+Shell 6: 1583.3709 [$]
+Shell 7: 1749.9539 [$]
+Shell 8: 1916.5368 [$]
+Shell 9: 2061.6702 [$]
+Total: 12729.6423 [$]
+Total per Wh: 0.010466 [$/Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 19:28:34, No name
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 8000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 203.5469 [MPa]
+Minimal tension, hoop: 21.1879 [MPa]
+Maximal tension, radial: 0.5444 [MPa]
+Minimal tension, radial: 2.2352e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 350.6615 [MPa]
+Minimal tension, hoop: -366.24 [MPa]
+Maximal tension, radial: 5.0291e-014 [MPa]
+Minimal tension, radial: -89.1317 [MPa]
+Interference pressures:
+Shell 1-2: 71.7319 [MPa]
+Shell 2-3: 89.1317 [MPa]
+Shell 3-4: 85.1089 [MPa]
+Shell 4-5: 72.4556 [MPa]
+Shell 5-6: 56.7601 [MPa]
+Shell 6-7: 40.6546 [MPa]
+Shell 7-8: 25.4349 [MPa]
+Shell 8-9: 11.7496 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1293.8946 [kNm]
+Shell 2-3: 2313.6214 [kNm]
+Shell 3-4: 3005.5377 [kNm]
+Shell 4-5: 3340.7799 [kNm]
+Shell 5-6: 3311.3392 [kNm]
+Shell 6-7: 2927.4425 [kNm]
+Shell 7-8: 2215.7275 [kNm]
+Shell 8-9: 1217.9238 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Shell and system energy:
+Shell 1: 16.1486 [Wh]
+Shell 2: 29.3454 [Wh]
+Shell 3: 48.3036 [Wh]
+Shell 4: 74.0699 [Wh]
+Shell 5: 107.691 [Wh]
+Shell 6: 150.2134 [Wh]
+Shell 7: 202.6836 [Wh]
+Shell 8: 266.1484 [Wh]
+Shell 9: 337.8555 [Wh]
+Total: 1232.4593 [Wh]
+Total per kg: 4.8409 [Wh/kg]
+--------------------------------------------------
+Shell and system cost:
+Shell 1: 750.4562 [$]
+Shell 2: 917.0391 [$]
+Shell 3: 1083.6221 [$]
+Shell 4: 1250.205 [$]
+Shell 5: 1416.788 [$]
+Shell 6: 1583.3709 [$]
+Shell 7: 1749.9539 [$]
+Shell 8: 1916.5368 [$]
+Shell 9: 2061.6702 [$]
+Total: 12729.6423 [$]
+Total per Wh: 0.0028691 [$/Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 19:30:01, No name
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 8000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 203.5469 [MPa]
+Minimal tension, hoop: 21.1879 [MPa]
+Maximal tension, radial: 0.5444 [MPa]
+Minimal tension, radial: 2.2352e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 350.6615 [MPa]
+Minimal tension, hoop: -366.24 [MPa]
+Maximal tension, radial: 5.0291e-014 [MPa]
+Minimal tension, radial: -89.1317 [MPa]
+Interference pressures:
+Shell 1-2: 71.7319 [MPa]
+Shell 2-3: 89.1317 [MPa]
+Shell 3-4: 85.1089 [MPa]
+Shell 4-5: 72.4556 [MPa]
+Shell 5-6: 56.7601 [MPa]
+Shell 6-7: 40.6546 [MPa]
+Shell 7-8: 25.4349 [MPa]
+Shell 8-9: 11.7496 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1293.8946 [kNm]
+Shell 2-3: 2313.6214 [kNm]
+Shell 3-4: 3005.5377 [kNm]
+Shell 4-5: 3340.7799 [kNm]
+Shell 5-6: 3311.3392 [kNm]
+Shell 6-7: 2927.4425 [kNm]
+Shell 7-8: 2215.7275 [kNm]
+Shell 8-9: 1217.9238 [kNm]
+--------------------------------------------------
+Shell and system mass:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Shell and system energy:
+Shell 1: 16.1486 [Wh]
+Shell 2: 29.3454 [Wh]
+Shell 3: 48.3036 [Wh]
+Shell 4: 74.0699 [Wh]
+Shell 5: 107.691 [Wh]
+Shell 6: 150.2134 [Wh]
+Shell 7: 202.6836 [Wh]
+Shell 8: 266.1484 [Wh]
+Shell 9: 337.8555 [Wh]
+Total: 1232.4593 [Wh]
+Total per kg: 4.8409 [Wh/kg]
+--------------------------------------------------
+Shell and system cost:
+Shell 1: 750.4562 [$]
+Shell 2: 917.0391 [$]
+Shell 3: 1083.6221 [$]
+Shell 4: 1250.205 [$]
+Shell 5: 1416.788 [$]
+Shell 6: 1583.3709 [$]
+Shell 7: 1749.9539 [$]
+Shell 8: 1916.5368 [$]
+Shell 9: 2061.6702 [$]
+Total: 12729.6423 [$]
+Total per Wh: 10.3287 [$/Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
+Date and time of run: 29-Nov-2013 20:18:40, No name
+Input data:
+Ri: 0.1            0.125             0.15            0.175              0.2            0.225             0.25            0.275              0.3
+Ro: 0.12525          0.15025          0.17525          0.20025          0.22525          0.25025          0.27525          0.30025            0.325
+Ec: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+Er: 7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010         7.2e+010
+v: 0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33             0.33
+p: 2800             2800             2800             2800             2800             2800             2800             2800             2800
+µ: 0.61             0.61             0.61             0.61             0.61             0.61             0.61             0.61                0
+G: 2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010         2.8e+010
+C: 50               50               50               50               50               50               50               50               50
+lr: 225001
+h: 0.3
+n: 8000
+n_: 3000
+sh: 9
+
+Results:
+--------------------------------------------------
+Centrifugal only:
+Maximal tension, hoop: 203.5469 [MPa]
+Minimal tension, hoop: 21.1879 [MPa]
+Maximal tension, radial: 0.5444 [MPa]
+Minimal tension, radial: 2.2352e-014 [MPa]
+--------------------------------------------------
+Press-fit, standstill:
+Maximal tension, hoop: 295.1669 [MPa]
+Minimal tension, hoop: -548.8659 [MPa]
+Maximal tension, radial: 5.9605e-014 [MPa]
+Minimal tension, radial: -128.7271 [MPa]
+Interference pressures:
+Shell 1-2: 99.522 [MPa]
+Shell 2-3: 128.7271 [MPa]
+Shell 3-4: 128.4093 [MPa]
+Shell 4-5: 114.6434 [MPa]
+Shell 5-6: 94.5826 [MPa]
+Shell 6-7: 71.6816 [MPa]
+Shell 7-8: 47.7025 [MPa]
+Shell 8-9: 23.5741 [MPa]
+--------------------------------------------------
+Press-fit, rotating:
+Maximal tension, hoop: 350.6615 [MPa]
+Minimal tension, hoop: -366.24 [MPa]
+Maximal tension, radial: 5.0291e-014 [MPa]
+Minimal tension, radial: -89.1317 [MPa]
+Interference pressures:
+Shell 1-2: 71.7319 [MPa]
+Shell 2-3: 89.1317 [MPa]
+Shell 3-4: 85.1089 [MPa]
+Shell 4-5: 72.4556 [MPa]
+Shell 5-6: 56.7601 [MPa]
+Shell 6-7: 40.6546 [MPa]
+Shell 7-8: 25.4349 [MPa]
+Shell 8-9: 11.7496 [MPa]
+--------------------------------------------------
+Maximal assembly force needed for shell press-fit mounting:
+Shell 1-2: 14332.6858 [kN]
+Shell 2-3: 22239.0031 [kN]
+Shell 3-4: 25875.2978 [kN]
+Shell 4-5: 26396.8868 [kN]
+Shell 5-6: 24496.6735 [kN]
+Shell 6-7: 20625.8847 [kN]
+Shell 7-8: 15097.3061 [kN]
+Shell 8-9: 8138.5857 [kN]
+--------------------------------------------------
+Maximal transferable torque between shells, at standstill:
+Shell 1-2: 1795.1689 [kNm]
+Shell 2-3: 3341.4102 [kNm]
+Shell 3-4: 4534.6459 [kNm]
+Shell 4-5: 5285.9766 [kNm]
+Shell 5-6: 5517.8757 [kNm]
+Shell 6-7: 5161.6276 [kNm]
+Shell 7-8: 4155.5335 [kNm]
+Shell 8-9: 2443.6104 [kNm]
+--------------------------------------------------
+Maximal transferable torque between shells, at max rpm:
+Shell 1-2: 1293.8946 [kNm]
+Shell 2-3: 2313.6214 [kNm]
+Shell 3-4: 3005.5377 [kNm]
+Shell 4-5: 3340.7799 [kNm]
+Shell 5-6: 3311.3392 [kNm]
+Shell 6-7: 2927.4425 [kNm]
+Shell 7-8: 2215.7275 [kNm]
+Shell 8-9: 1217.9238 [kNm]
+--------------------------------------------------
+Shell and system MASS:
+Shell 1: 15.0091 [kg]
+Shell 2: 18.3408 [kg]
+Shell 3: 21.6724 [kg]
+Shell 4: 25.0041 [kg]
+Shell 5: 28.3358 [kg]
+Shell 6: 31.6674 [kg]
+Shell 7: 34.9991 [kg]
+Shell 8: 38.3307 [kg]
+Shell 9: 41.2334 [kg]
+Total: 254.5928 [kg]
+--------------------------------------------------
+Shell and system ENERGY:
+Shell 1: 16.1486 [Wh]
+Shell 2: 29.3454 [Wh]
+Shell 3: 48.3036 [Wh]
+Shell 4: 74.0699 [Wh]
+Shell 5: 107.691 [Wh]
+Shell 6: 150.2134 [Wh]
+Shell 7: 202.6836 [Wh]
+Shell 8: 266.1484 [Wh]
+Shell 9: 337.8555 [Wh]
+Total: 1232.4593 [Wh]
+Total per kg: 4.8409 [Wh/kg]
+--------------------------------------------------
+Shell and system COST:
+Shell 1: 750.4562 [$]
+Shell 2: 917.0391 [$]
+Shell 3: 1083.6221 [$]
+Shell 4: 1250.205 [$]
+Shell 5: 1416.788 [$]
+Shell 6: 1583.3709 [$]
+Shell 7: 1749.9539 [$]
+Shell 8: 1916.5368 [$]
+Shell 9: 2061.6702 [$]
+Total: 12729.6423 [$]
+Total per Wh: 10.3287 [$/Wh]
+--------------------------------------------------
+End of output
+
+
+
+
+
