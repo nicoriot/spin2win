@@ -33,6 +33,7 @@ step  =  0.000001   ;  % [m] Radial step size used in calculations
 r = min(d.ri):step:max(d.ro); % radial vector
 
 % Preallocating vectors
+
 % d.m     = length(d.ri); -maybe not needed due to line 12
 dr      = zeros(1,d.m);
 Ten_c   = zeros(3,length(r));   
@@ -61,19 +62,20 @@ Ten_r_min     = zeros(3,d.m);
 intf_max      = zeros(2,d.m);
 intf_min      = zeros(2,d.m);
 
-e.m     = d.m;
-e.ri    = d.ri;
-e.ro    = d.ro;
-e.Ec    = d.Ec;
-e.Er    = d.Er;
-e.v_cr  = d.v;
-e.p     = d.p;
-e.G_rz  = d.G_rz;
-e.C     = d.C;
-e.h     = d.hh;
-e.n     = d.n;
-e.n_    = d.n_;
-e.y     = length(r);
+% e.m     = d.m;
+% e.ri    = d.ri;
+% e.ro    = d.ro;
+% e.Ec    = d.Ec;
+% e.Er    = d.Er;
+% e.v_cr  = d.v;
+% e.p     = d.p;
+% e.G_rz  = d.G_rz;
+% e.C     = d.C;
+% e.h     = d.hh;
+% e.n     = d.n;
+% e.n_    = d.n_;
+% e.y     = length(r);
+d.y     = length(r);
 
 % Useful constant relations calcualtions
 w = 2*pi*d.n/60; % rpm to rad/sec conversion
@@ -199,24 +201,24 @@ options = optimset('TolFun',1e-9,'TolFun',1e-9);
 % Finetune pressure guess from above matrix calculations
 % by using fsolve on Pd_calc subroutine
 % n = 0 for standstill curve
-[Pd, ~,warning_flags(4)] = fsolve(@(x) Pd_calc(x,e,0),Pd,options);
+[Pd, ~,warning_flags(4)] = fsolve(@(x) Pd_calc(x,d,0),Pd,options);
 Pd_still = Pd;
 
 % Calcualte the stresses in standstill case
 % with the Ten_cr_calc subroutine
 [Ten_c(1,1:1:length(r)), Ten_r(1,1:1:length(r)), ...
-    intf(1,1:1:length(r))] = Ten_cr_calc(Pd,e,0);
+    intf(1,1:1:length(r))] = Ten_cr_calc(Pd,d,0);
 
 % Reset Pd to previous approximate values for next run
 Pd = Pd_t;
 
 % Finetune preassure guess, include centrifugal pressure, n =/= 0
-[Pd, ~,warning_flags(5)] = fsolve(@(x) Pd_calc(x,e,d.n),Pd,options);
+[Pd, ~,warning_flags(5)] = fsolve(@(x) Pd_calc(x,d,d.n),Pd,options);
 
 % Calcualte Pressfit stresses due to rotating pressfit
 % with the Ten_cr_calc subroutine
 [Ten_c(3,1:1:length(r)), Ten_r(3,1:1:length(r)), ...
-     intf(2,1:1:length(r))] = Ten_cr_calc(Pd,e,d.n);
+     intf(2,1:1:length(r))] = Ten_cr_calc(Pd,d,d.n);
 end % end for if statement about number of shells
 
 % Sacling from Pa to MPa for easier enterpritation
@@ -261,7 +263,7 @@ for i=1:1:2
 end
 
 % Calculate mass and energy of system using E_M_calc subroutine
-[Energy, Mass, Cost] = Energy_Mass_calc(e);
+[Energy, Mass, Cost] = Energy_Mass_calc(d);
 
 
 % Print data to screen and save into logfile named after the current date
