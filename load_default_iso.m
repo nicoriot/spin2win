@@ -1,0 +1,70 @@
+function [ idat ] = load_default_iso()
+% Syntax:
+% [Output data] = load_default_iso()
+
+% Generates a set of data that can be used as input data in Spin2Win
+
+% Input paramaters
+%                  Aluminum SETTINGS
+%       C1          C2          C3          C4         C5 
+%       C6          C7          C8          C9 
+% [m] Inner radius
+ri = [ 0.100    ,  0.125    ,  0.150    ,  0.175    ,  0.200     , ...  
+       0.225    ,  0.250    ,  0.275    ,  0.300    ]; 
+% [m] Outer radius
+ro = [ 0.12525  ,  0.15025  ,  0.17525  ,  0.20025  ,  0.22525   , ... 
+       0.25025  ,  0.27525  ,  0.30025  ,  0.32500  ]; 
+% [Pa] Youngs Modulus, Hoop   
+Ec = [ 72*10^9  ,  72*10^9  ,  72*10^9  ,  72*10^9  ,  72*10^9   , ... 
+       72*10^9  ,  72*10^9  ,  72*10^9  ,  72*10^9  ]; 
+% [Pa ]Youngs Modulus, Radial   
+Er = [ 72*10^9  ,  72*10^9  ,  72*10^9  ,  72*10^9  ,  72*10^9   , ... 
+       72*10^9  ,  72*10^9  ,  72*10^9  ,  72*10^9  ]; 
+% Possions ratio, cirumference - radial direction   
+v  = [ 0.33     ,  0.33     ,  0.33     ,  0.33     ,  0.33      , ... 
+       0.33     ,  0.33     ,  0.33     ,  0.33     ]; 
+% [kg/m3] Material density   
+p  = [ 2800     ,  2800     ,  2800     ,  2800     ,  2800      , ... 
+       2800     ,  2800     ,  2800     ,  2800     ]; 
+% Static friction coifficient   
+uu = [ 0.61     ,  0.61     ,  0.61     ,  0.61     ,  0.61      , ... 
+       0.61     ,  0.61     ,  0.61     ,  0        ]; 
+% Shear modulus  
+G_rz = [ 28*10^9  ,  28*10^9  ,  28*10^9  ,  28*10^9  ,  28*10^9   , ...
+       28*10^9  ,  28*10^9  ,  28*10^9  ,  28*10^9        ];      
+% Cost  
+C = [ 50  ,  50  ,  50  ,  50  ,  50   , ...
+       50  ,  50  ,  50  ,  50        ];   
+
+% Adittional input paramaters
+hh = 0.3 ;                              % rotor height
+n = 8000;                              % [rpm] rotational speed
+n_ = 3000;                             % Minspeed
+
+% Settings
+step  =  0.000001   ;  % [m] Radial step size used in calculations 
+%Must be same as in Main_calc
+
+% Preallocating vectors
+m = length(ri);
+r = min(ri):step:max(ro); % radial vector
+
+% Fill idat with input data for easy transport into subroutines
+% scaled to mm, diameters and MPa
+idat(1,1:1:m) = ri*2000;
+idat(2,1:1:m) = ro*2000;
+idat(3,1:1:m) = Ec/10^9;
+idat(4,1:1:m) = Er/10^9;
+idat(5,1:1:m) = v;
+idat(6,1:1:m) = p;
+idat(7,1:1:m) = uu;
+idat(9,1:1:m) = G_rz/10^9;
+idat(10,1:1:m) = C;
+idat(8,1)     = length(r);
+idat(8,2)     = hh*1000;
+idat(8,3)     = n;
+idat(8,4)     = n_;
+idat(8,5)     = 9;
+
+end
+
