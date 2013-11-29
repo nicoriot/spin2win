@@ -73,6 +73,8 @@ idat(5,1:1:m) = v;
 idat(6,1:1:m) = p;
 idat(7,1:1:m) = uu;
 idat(9,1:1:m) = G_rz;
+idat(10,1:1:m) = C;
+
 idat(8,1)     = length(r);
 idat(8,2)     = hh;
 idat(8,3)     = n;
@@ -189,7 +191,7 @@ D = A\B;
 % Extract preassures from vector X
 % Pd will be approximate now if a isotropic material is used.
 % Values will be used as input guess into fsolver for finetuning 
-%or major change if an orthotropic material is used  
+% or major change if an orthotropic material is used  
   Pd_t = 0;
   for k = 1:1:m-1
   Pd_t(k) = D(k);
@@ -266,8 +268,8 @@ for i=1:1:2
     end
 end
 
-% Calculate mass and energy of system using E_M_calc subroutine
-[Energy, Mass] = E_M_calc(idat);
+% Calculate Energy, Mass, Cost,  of system using E_M_Calc subroutine
+[Energy, Mass, Cost] = E_M_Calc(idat);
 
 
 % Print data to screen and save into logfile named after the current date
@@ -355,17 +357,32 @@ for k = 1:1:m-1
     disp(['Shell ', num2str(k), '-' , num2str(k+1), ': ', num2str(F), ' [kNm]']) 
 end
 disp('--------------------------------------------------')
-disp('Shell and system mass:')
+disp('Shell and system MASS:')
 %Repeat for number of shells
 for k = 1:1:m
     disp(['Shell ', num2str(k), ': ', num2str(Mass(k)), ' [kg]']) 
 end
 disp(['Total: ', num2str(Mass(m+1)), ' [kg]']) 
 disp('--------------------------------------------------')
-disp('Stored energy:')
-disp(['in total: ', num2str(Energy(1)/3600), ' [Wh]']) 
-disp(['in rpm interval: ', num2str(Energy(2)/3600), ' [Wh]']) 
+
+disp('Shell and system ENERGY:')
+%Repeat for number of shells
+for k = 1:1:m
+    disp(['Shell ', num2str(k), ': ', num2str(Energy(k)/3600), ' [Wh]']) 
+end
+disp(['Total: ', num2str(Energy(m+1)/3600), ' [Wh]']) 
+disp(['Total per kg: ', num2str(Energy(m+2)/3600), ' [Wh/kg]'])
 disp('--------------------------------------------------')
+
+disp('Shell and system COST:')
+%Repeat for number of shells
+for k = 1:1:m
+    disp(['Shell ', num2str(k), ': ', num2str(Cost(k)), ' [$]']) 
+end
+disp(['Total: ', num2str(Cost(m+1)), ' [$]']) 
+disp(['Total per Wh: ', num2str(Cost(m+2)*3600), ' [$/Wh]'])
+disp('--------------------------------------------------')
+
 
 % Print WARNINGS if they have been flagged
 if min(Pd) < 0
