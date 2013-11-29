@@ -56,7 +56,7 @@ guidata(hObject, handles);
 % Fill tables with zeros and ones
 tmp = ones(5,1);
 set(handles.uitable2 , 'data' , tmp);
-tmp = zeros(7,9);
+tmp = zeros(9,9);
 set(handles.uitable1 , 'data' , tmp);
 
 %Copy filled table data to variables
@@ -200,9 +200,9 @@ tmp(1) = floor(max(tmp(1),1));
 % number: expand the table and fill the new columns with zeros
 % but keep current data in cells.
 if length(handles.geom_data(1,:)) < tmp(1)
-    tmp2 = zeros(7,tmp(1));
+    tmp2 = zeros(8,tmp(1));
     tmp3 = get(handles.uitable1 , 'data');
-    for i = 1:1:7
+    for i = 1:1:8
         for k = 1:1:tmp(1)     
         if k <= length(tmp3(1,:))   
             tmp2(i,k) = tmp3(i,k);
@@ -320,8 +320,8 @@ tmp3(4) = tmp2(4);
 tmp3(5) = floor(handles.calc_settings(5));
 
 %Fill empty gometry data field with zeros
-tmp4 = zeros(7,9);
-    for i = 1:1:7
+tmp4 = zeros(8,9);
+    for i = 1:1:8
         for k = 1:1:9 
         if k <= length(tmp1(1,:))   
             tmp4(i,k) = tmp1(i,k);

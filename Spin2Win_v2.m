@@ -56,7 +56,7 @@ guidata(hObject, handles);
 % Fill tables with zeros and ones
 tmp = ones(5,1);
 set(handles.uitable2 , 'data' , tmp);
-tmp = zeros(8,9);
+tmp = zeros(9,9);
 set(handles.uitable1 , 'data' , tmp);
 
 %Copy filled table data to variables
@@ -320,8 +320,8 @@ tmp3(4) = tmp2(4);
 tmp3(5) = floor(handles.calc_settings(5));
 
 %Fill empty gometry data field with zeros
-tmp4 = zeros(8,9);
-    for i = 1:1:8
+tmp4 = zeros(9,9);
+    for i = 1:1:9
         for k = 1:1:9 
         if k <= length(tmp1(1,:))   
             tmp4(i,k) = tmp1(i,k);

@@ -20,6 +20,7 @@ v  = indata(5,1:1:m);      % Possions ratio, cirumference - radial direction
 p  = indata(6,1:1:m);      % [kg/m3] Material density
 uu = indata(7,1:1:m);      % Static friction coifficient
 G_rz = indata(9,1:1:m)*10^9;  % Shear modulus radial-axial
+C = indata(10,1:1:m);  % Shear modulus radial-axial
 
 hh = indata(8,2)/1000;     % [m] Cylinder height, scale from mm to m
 n  = indata(8,3);          % Rotationalspeed rpm
@@ -291,6 +292,7 @@ disp(['v: ', num2str(v,10)])
 disp(['p: ', num2str(p,10)])
 disp(['µ: ', num2str(uu,10)])
 disp(['G: ', num2str(G_rz,10)])
+disp(['C: ', num2str(C,10)])
 disp(['lr: ', num2str(length(r),10)])
 disp(['h: ', num2str(hh,10)])
 disp(['n: ', num2str(n,10)])

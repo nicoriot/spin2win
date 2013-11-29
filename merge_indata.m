@@ -7,7 +7,7 @@ function [ senddat ] = merge_indata( geomdat, setdat )
 % for easy transport between subfunctions
 
 % Pre allocate matrix
-senddat = zeros(9,length(geomdat(1,:)));
+senddat = zeros(10,length(geomdat(1,:)));
 
 % Copy geometrical data into output matrix
 for i=1:1:7
@@ -19,6 +19,11 @@ end
 for k=1:1:length(geomdat(1,:))
 senddat(9,k) = geomdat(8,k);
 end
+
+for k=1:1:length(geomdat(1,:))
+senddat(10,k) = geomdat(9,k);
+end
+
 
 % Copy settings data into output matrix
 i = 8;

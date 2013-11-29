@@ -7,7 +7,7 @@ function [ idat ] = import_n_format( impraw, begline )
 
 % Read first seven lines after run marker
 % Conataning geometrical data
-for i=1:1:8
+for i=1:1:9
 k=1;
 [curr, rest]=strtok(impraw(begline+1+i));
 [curr, rest]=strtok(rest);       
@@ -18,13 +18,18 @@ k=1;
    end
 end
 
+% Cost fix
+idat(10,:)=idat(9,:);
+
 % Shear modulus fix
 idat(9,:)=idat(8,:);
+
+% clear basic settings vector
 idat(8,:)=0;
 
 % Read next five lines contaning settings data
 for i=1:1:5
-   [~ , rest]=strtok(impraw(begline+9+i));
+   [~ , rest]=strtok(impraw(begline+10+i));
    [curr]=strtok(rest);
    idat(8,i)=str2double(cell2mat(curr));
 end

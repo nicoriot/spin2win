@@ -5,9 +5,9 @@ function [ idat ] = import_n_format( impraw, begline )
  
 % Format raw data into idat format for the GUI tables
 
-% Read first eight lines after run marker
+% Read first nine lines after run marker, containing geom data
 % Conataning geometrical data
-for i=1:1:8
+for i=1:1:9
 k=1;
 [curr, rest]=strtok(impraw(begline+1+i));
 [curr, rest]=strtok(rest);       
@@ -18,9 +18,16 @@ k=1;
    end
 end
 
+% Cost fix
+idat(10,:)=idat(9,:);
+
 % Shear modulus fix
 idat(9,:)=idat(8,:);
+
+% Clean idat(8,:)
 idat(8,:)=0;
+
+
 
 % Read next five lines contaning settings data
 for i=1:1:5
