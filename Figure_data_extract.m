@@ -1,5 +1,6 @@
 % Figure data extractor for subplotted figures
 % custom made to extract Spin2Win figure data.
+% Extracts all data from currently active figure
 
 % Currently standalone, to be implemented into a data extraction tool.
 
