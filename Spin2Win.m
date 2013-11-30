@@ -1,35 +1,35 @@
-function varargout = Spin2Win_v2_DPI(varargin)
-% SPIN2WIN_V2_DPI M-file for Spin2Win_v2_DPI.fig
-%      SPIN2WIN_V2_DPI, by itself, creates a new SPIN2WIN_V2_DPI or raises the existing
+function varargout = Spin2Win(varargin)
+% SPIN2WIN M-file for Spin2Win.fig
+%      SPIN2WIN, by itself, creates a new SPIN2WIN or raises the existing
 %      singleton*.
 %      
-%      H = SPIN2WIN_V2_DPI returns the handle to a new SPIN2WIN_V2_DPI or the handle to
+%      H = SPIN2WIN returns the handle to a new SPIN2WIN or the handle to
 %      the existing singleton*.
 %
-%      SPIN2WIN_V2_DPI('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in SPIN2WIN_V2_DPI.M with the given input arguments.
+%      SPIN2WIN('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in SPIN2WIN.M with the given input arguments.
 %
-%      SPIN2WIN_V2_DPI('Property','Value',...) creates a new SPIN2WIN_V2_DPI or raises the
+%      SPIN2WIN('Property','Value',...) creates a new SPIN2WIN or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before Spin2Win_v2_DPI_OpeningFcn gets called.  An
+%      applied to the GUI before Spin2Win_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to Spin2Win_v2_DPI_OpeningFcn via varargin.
+%      stop.  All inputs are passed to Spin2Win_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help Spin2Win_v2_DPI
+% Edit the above text to modify the response to help Spin2Win
 
-% Last Modified by GUIDE v2.5 29-Nov-2013 18:08:31
+% Last Modified by GUIDE v2.5 30-Nov-2013 10:12:07
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @Spin2Win_v2_DPI_OpeningFcn, ...
-                   'gui_OutputFcn',  @Spin2Win_v2_DPI_OutputFcn, ...
+                   'gui_OpeningFcn', @Spin2Win_OpeningFcn, ...
+                   'gui_OutputFcn',  @Spin2Win_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -44,10 +44,10 @@ end
 % End initialization code - DO NOT EDIT
 
 %-----------------------------------------------------------------------
-% --- Executes just before Spin2Win_v2_DPI is made visible.
-function Spin2Win_v2_DPI_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before Spin2Win is made visible.
+function Spin2Win_OpeningFcn(hObject, eventdata, handles, varargin)
 
-% Choose default command line output for Spin2Win_v2_DPI
+% Choose default command line output for Spin2Win
 handles.output = hObject;
 
 % Update handles structure
@@ -71,7 +71,7 @@ guidata(hObject, handles);
 
 %-----------------------------------------------------------------------
 % --- Outputs from this function are returned to the command line.
-function varargout = Spin2Win_v2_DPI_OutputFcn(hObject, eventdata, handles)
+function varargout = Spin2Win_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
