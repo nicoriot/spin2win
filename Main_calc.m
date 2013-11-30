@@ -11,37 +11,45 @@ function [out] = Main_calc(indata,prefix)
 % Extract number of active shells from indata
 d.m = indata(8,5);
 
-% Place the rest of indata into correct variables
+% Place the rest of indata into variables, collect all data in the d-struct
 d.ri = indata(1,1:1:d.m)/2000; % [m] Inner radius, scale from mm, dia to m, radius
 d.ro = indata(2,1:1:d.m)/2000; % [m] Outer radius, scale from mm, dia to m, radius
 d.Ec = indata(3,1:1:d.m)*10^9; % [Pa] Youngs Modulus, Hoop
 d.Er = indata(4,1:1:d.m)*10^9; % [Pa ]Youngs Modulus, Radial
-d.v  = indata(5,1:1:d.m);      % Possions ratio, cirumference - radial direction
+d.v_cr  = indata(5,1:1:d.m);      % Possions ratio, cirumference - radial direction
 d.p  = indata(6,1:1:d.m);      % [kg/m3] Material density
 d.uu = indata(7,1:1:d.m);      % Static friction coifficient
 d.G_rz = indata(9,1:1:d.m)*10^9;  % Shear modulus radial-axial
 d.C = indata(10,1:1:d.m);  % Shear modulus radial-axial
 
-d.hh = indata(8,2)/1000;     % [m] Cylinder height, scale from mm to m
+d.h = indata(8,2)/1000;     % [m] Cylinder height, scale from mm to m
 d.n  = indata(8,3);          % Rotationalspeed rpm
 d.n_ = indata(8,4);          % Min speed
 
 % Step size setting, default 0.000001 is enougth for most calcualtions.
 step  =  0.000001   ;  % [m] Radial step size used in calculations
 
-% Initiate radial vector to get avaliable flywheel radial positions
+% Initiate radial vector to get avaliable cylinder radial positions
 r = min(d.ri):step:max(d.ro); % radial vector
 
-% Preallocating vectors
-
-% d.m     = length(d.ri); -maybe not needed due to line 12
+%********** Preallocating vectors *********
 dr      = zeros(1,d.m);
-Ten_c   = zeros(3,length(r));   
-Ten_r   = zeros(3,length(r));
-% Where: 1: Pressfit standstill stress, 2: Pure centrifugal stress,
-% 3: Pressfit with rotation
+Ten_c   = zeros(3,length(r)); % Hoop
+Ten_r   = zeros(3,length(r)); % Radial
+% 1: Pressfit standstill stress.
+% 2: Pure centrifugal stress.
+% 3: Pressfit with rotation at max rpm.
+
 intf    = zeros(2,length(r));
-% Where: 1: Interface plot standstill, 2: Interface plot rotating
+% 1: Displacment values at standstill. 
+% 2: Displacement values while rotating at max rpm.
+
+e_c = zeros(2,length(r));
+e_r = zeros(2,length(r));
+e_z = zeros(2,length(r));
+% 1: Strain at standstill. 
+% 2: Strain while rotating at max rpm.
+
 Pd      = zeros(1,d.m-1);            %interface preassure storage vector
 K       = zeros(1,d.m-1);
 U       = zeros(1,d.m-1);
@@ -62,20 +70,10 @@ Ten_r_min     = zeros(3,d.m);
 intf_max      = zeros(2,d.m);
 intf_min      = zeros(2,d.m);
 
-% e.m     = d.m;
-% e.ri    = d.ri;
-% e.ro    = d.ro;
-% e.Ec    = d.Ec;
-% e.Er    = d.Er;
-% e.v_cr  = d.v;
-% e.p     = d.p;
-% e.G_rz  = d.G_rz;
-% e.C     = d.C;
-% e.h     = d.hh;
-% e.n     = d.n;
-% e.n_    = d.n_;
-% e.y     = length(r);
-d.y     = length(r);
+d.y     = length(r); % add length of r into d for usage in subroutines
+
+%********** Preallocating DONE *********
+
 
 % Useful constant relations calcualtions
 w = 2*pi*d.n/60; % rpm to rad/sec conversion
@@ -90,7 +88,7 @@ for k = 1:1:d.m
     j(k) = (b(k)^(-u(k)-1)-b(k)^2)/(b(k)^(-u(k)-1)-b(k)^(u(k)-1));
 
     % Unmodified centrifugal field
-    Ten_o(k) = d.p(k)*w^2*d.ro(k)^2*((3+d.v(k))/(9-u(k)^2));
+    Ten_o(k) = d.p(k)*w^2*d.ro(k)^2*((3+d.v_cr(k))/(9-u(k)^2));
 end
 
 % Interface calculation between shells
@@ -109,8 +107,8 @@ dr = abs(dr);
 % using Ten_cr_calc subroutine with zero shell interference
 Pdz = zeros(1,d.m-1);
 
-[Ten_c(2,1:1:length(r)), Ten_r(2,1:1:length(r)), ...
-intf(2,1:1:length(r))] = Ten_cr_calc(Pdz,e,d.n);
+[Ten_c(2,1:1:d.y), Ten_r(2,1:1:d.y), ...
+intf(2,1:1:d.y), ~ , ~ , ~ ] = Ten_cr_calc(Pdz,d,d.n);
 
 %skip all pressfit calcualtions if there is less than 2 shells
 if d.m ~= 1
@@ -121,8 +119,10 @@ if d.m ~= 1
 % Section preassure calc factors used i matrix
 for k = 1:1:d.m-1
     K(k) = d.ri(k+1)*((d.ro(k+1)^2+d.ri(k+1)^2)/(d.Ec(k+1)*(d.ro(k+1)^2 ...
-          -d.ri(k+1)^2))+d.v(k+1)/d.Er(k+1));
-    U(k) = d.ro(k)*((d.ro(k)^2+d.ri(k)^2)/(d.Ec(k)*(d.ro(k)^2-d.ri(k)^2))-d.v(k)/d.Er(k));    
+          -d.ri(k+1)^2))+d.v_cr(k+1)/d.Er(k+1));
+      
+    U(k) = d.ro(k)*((d.ro(k)^2+d.ri(k)^2)/...
+          (d.Ec(k)*(d.ro(k)^2-d.ri(k)^2))-d.v_cr(k)/d.Er(k));    
 end
 
 % Example Matrix structure for a 4 shelled geometry.
@@ -186,7 +186,7 @@ D = A\B;
 % Extract preassures from vector X
 % Pd will be approximate now if a isotropic material is used.
 % Values will be used as input guess into fsolver for finetuning 
-%or major change if an orthotropic material is used  
+% or major change if an orthotropic material is used  
 Pd_t = 0;
 for k = 1:1:d.m-1
     Pd_t(k) = D(k);
@@ -206,8 +206,8 @@ Pd_still = Pd;
 
 % Calcualte the stresses in standstill case
 % with the Ten_cr_calc subroutine
-[Ten_c(1,1:1:length(r)), Ten_r(1,1:1:length(r)), ...
-    intf(1,1:1:length(r))] = Ten_cr_calc(Pd,d,0);
+[Ten_c(1,1:1:d.y), Ten_r(1,1:1:d.y), ...
+    intf(1,1:1:d.y), ~ , ~, ~  ] = Ten_cr_calc(Pd,d,0);
 
 % Reset Pd to previous approximate values for next run
 Pd = Pd_t;
@@ -217,8 +217,8 @@ Pd = Pd_t;
 
 % Calcualte Pressfit stresses due to rotating pressfit
 % with the Ten_cr_calc subroutine
-[Ten_c(3,1:1:length(r)), Ten_r(3,1:1:length(r)), ...
-     intf(2,1:1:length(r))] = Ten_cr_calc(Pd,d,d.n);
+[Ten_c(3,1:1:d.y), Ten_r(3,1:1:d.y), ...
+     intf(2,1:1:d.y), ~ , ~, ~  ] = Ten_cr_calc(Pd,d,d.n);
 end % end for if statement about number of shells
 
 % Sacling from Pa to MPa for easier enterpritation
@@ -284,13 +284,13 @@ disp(['Ri: ', num2str(d.ri,10)])
 disp(['Ro: ', num2str(d.ro,10)])
 disp(['Ec: ', num2str(d.Ec,10)])
 disp(['Er: ', num2str(d.Er,10)])
-disp(['v: ', num2str(d.v,10)])
+disp(['v: ', num2str(d.v_cr,10)])
 disp(['p: ', num2str(d.p,10)])
 disp(['µ: ', num2str(d.uu,10)])
 disp(['G: ', num2str(d.G_rz,10)])
 disp(['C: ', num2str(d.C,10)])
 disp(['lr: ', num2str(length(r),10)])
-disp(['h: ', num2str(d.hh,10)])
+disp(['h: ', num2str(d.h,10)])
 disp(['n: ', num2str(d.n,10)])
 disp(['n_: ', num2str(d.n_,10)])
 disp(['sh: ', num2str(d.m,10)])
@@ -333,21 +333,21 @@ disp('--------------------------------------------------')
 disp('Maximal assembly force needed for shell press-fit mounting:')
 %Repeat for number of interferences
 for k = 1:1:d.m-1
-    F = pi*2*d.ro(k)*d.hh*d.uu(k)*Pd_still(k)/1000;
+    F = pi*2*d.ro(k)*d.h*d.uu(k)*Pd_still(k)/1000;
     disp(['Shell ', num2str(k), '-' , num2str(k+1), ': ', num2str(F), ' [kN]']) 
 end
 disp('--------------------------------------------------')
 disp('Maximal transferable torque between shells, at standstill:')
 %Repeat for number of interferences
 for k = 1:1:d.m-1
-    F = pi*2*d.ro(k)*d.hh*d.uu(k)*Pd_still(k)*d.ro(k)/1000;
+    F = pi*2*d.ro(k)*d.h*d.uu(k)*Pd_still(k)*d.ro(k)/1000;
     disp(['Shell ', num2str(k), '-' , num2str(k+1), ': ', num2str(F), ' [kNm]']) 
 end
 disp('--------------------------------------------------')
 disp('Maximal transferable torque between shells, at max rpm:')
 %Repeat for number of interferences
 for k = 1:1:d.m-1
-    F = pi*2*d.ro(k)*d.hh*d.uu(k)*Pd(k)*d.ro(k)/1000;
+    F = pi*2*d.ro(k)*d.h*d.uu(k)*Pd(k)*d.ro(k)/1000;
     disp(['Shell ', num2str(k), '-' , num2str(k+1), ': ', num2str(F), ' [kNm]']) 
 end
 disp('--------------------------------------------------')
