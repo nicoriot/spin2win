@@ -42,6 +42,19 @@ v_zc(k) = v_rc(k);
 v_cz(k) = e.v_cr(k);
 end
 
+% Control possions values alarm if someone is not in 0 < v < 1 intervall
+v_max = max([e.v_cr(:);v_rc(:);v_rz(:);v_zr(:);v_zc(:);v_cz(:)]); 
+v_min = min([e.v_cr(:);v_rc(:);v_rz(:);v_zr(:);v_zc(:);v_cz(:)]); 
+
+ if( v_max >= 1 || v_min <= 0)
+    disp('*** *** ***    WARNING  *** ***  ***');
+    disp('Poissons ratio out of bounds.');
+    disp(['v_max: ', num2str(v_max)]); 
+    disp(['v_min: ', num2str(v_min)]); 
+    disp('*** *** ***    WARNING  *** ***  ***');
+    disp('');
+ end
+
 % Make Young's modulus quotas and b quota
 for k = 1:1:e.m
 u(k) = sqrt((e.Ec(k)/e.Er(k))*((1-v_rz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k))));
