@@ -1,5 +1,12 @@
-function [ Ten_c, Ten_r, intf ] = Ten_cr_calc(x,e,n)
+function [ Ten_c, Ten_r, intf, e_c, e_r, e_z ] = Ten_cr_calc(x,e,n)
 %Calculates hoop and radial stresses of a spinning cylinder
+
+% Ten_c = Hoop stress
+% Ten_r = Radial stress
+% intf = Radial dicplacement
+% e_c = Hoop strain
+% e_r = Radial strain
+% e_z = Axial strain
 
 % Preallocating vectors
 u = zeros(1,e.m);
@@ -13,6 +20,9 @@ r = linspace(min(e.ri), max(e.ro), e.y);
 Ten_c = zeros(1,length(r));
 Ten_r = zeros(1,length(r));
 intf = zeros(1,length(r));
+e_c = zeros(1,length(r));
+e_r = zeros(1,length(r));
+e_z = zeros(1,length(r));
 b = zeros(1,e.m);
 v_rc = zeros(1,e.m);
 v_rz = zeros(1,e.m);
@@ -83,6 +93,7 @@ for i = 1:1:length(r)
     
     %Calculate displacements
     intf(i) = r(i)*(Ten_c(i)/e.Ec(k)-e.v_cr(k)*Ten_r(i)/e.Er(k));
+    % not the correct equations see 2.18 e_z still unknown
 end
 
 end
