@@ -6,6 +6,7 @@ function [z] = Pd_calc(x,e,n)
 dr      = zeros(1,e.m);
 Ten_c   = zeros(1,e.m-1);
 Ten_r   = zeros(1,e.m-1);
+e_z     = zeros(1,e.m-1);
 u       = zeros(1,e.m);
 Pi      = zeros(1,e.m-1);
 Po      = zeros(1,e.m-1);
@@ -89,7 +90,7 @@ end
                  +Q2(k)*e.ri(k)^2;
     
     di(k-1) = e.ri(k)*((Ten_c(k-1)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
-              -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(k-1)/e.Er(k));
+              -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(k-1)/e.Er(k)-v_zc(k)*e_z(k-1));
           
     k=k-1;
     
@@ -100,7 +101,7 @@ end
                +Q2(k)*e.ro(k)^2;
     
     do(k) = e.ro(k)*((Ten_c(k)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
-            -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(k)/e.Er(k)); 
+            -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(k)/e.Er(k)-v_zc(k)*e_z(k)); 
         
  end
 
