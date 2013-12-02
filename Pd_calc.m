@@ -1,11 +1,11 @@
 function [z] = Pd_calc(x,e,n)
 % Calculate reamaning interferance in geomitry with applied preasssures
+% To be used together wiht fsolve and input preasssures data
 
 % Preallocating vectors
 dr      = zeros(1,e.m);
 Ten_c   = zeros(1,e.m-1);
 Ten_r   = zeros(1,e.m-1);
-Ten_z   = zeros(1,e.m-1);
 u       = zeros(1,e.m);
 Pi      = zeros(1,e.m-1);
 Po      = zeros(1,e.m-1);
@@ -78,7 +78,7 @@ end
 
 % Calculate stresses using equations from theory eq 2.20 and 2.22
 % And displacements using general Hooke's law
-for k = 1:1:e.m-1
+ for k = 1:1:e.m-1
     
     % Calc shell k+1 inner displacement di
     k=k+1;
@@ -90,8 +90,6 @@ for k = 1:1:e.m-1
     
     di(k-1) = e.ri(k)*((Ten_c(k-1)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
               -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(k-1)/e.Er(k));
-    
-    Ten_z(k-1)=e.Er(k)*(v_zr(k)*Ten_r(k-1)/e.Er(k)+v_zc(k)*Ten_c(k-1)/e.Ec(k)); 
           
     k=k-1;
     
@@ -102,19 +100,18 @@ for k = 1:1:e.m-1
                +Q2(k)*e.ro(k)^2;
     
     do(k) = e.ro(k)*((Ten_c(k)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
-            -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(k)/e.Er(k));
-    
-    Ten_z(k)=e.Er(k)*(v_zr(k)*Ten_r(k)/e.Er(k)+v_zc(k)*Ten_c(k)/e.Ec(k));     
+            -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(k)/e.Er(k)); 
         
-end
+ end
 
 % return z as error function
 % between inner and outer displacement
 % compared to original shell interferance
-% scaled up so that fsolve do not end prematurly
-for k=1:1:e.m-1
-z(k) = (di(k)-do(k)-dr(k))*10^6;
-end
+% scaled up by 10^6 so that fsolve do not end prematurly
+ for k=1:1:e.m-1
+ z(k) = (di(k)-do(k)-dr(k))*10^6;
+
+ end
 
 end
 

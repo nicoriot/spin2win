@@ -105,8 +105,9 @@ for i = 1:1:length(r)
     Ten_c(i) = u(k)*(C2(k)*r(i)^(-1+u(k))-C1(k)*r(i)^(-1-u(k)))+Q2(k)*r(i)^2;
     
     %Calculate displacements
-    intf(i) = r(i)*(Ten_c(i)/e.Ec(k)-e.v_cr(k)*Ten_r(i)/e.Er(k));
-    % not the correct equations see 2.18 e_z still unknown
+    intf(i) = r(i)*((Ten_c(i)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
+              -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(i)/e.Er(k));
+    % not the correct equations see 2.20 e_z still unknown
 end
 
 end
