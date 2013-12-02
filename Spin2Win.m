@@ -81,6 +81,11 @@ varargout{1} = handles.output;
 % Run Calculation button
 function pushbutton1_Callback(hObject, eventdata, handles)
 
+% Disable button when pressed/working and change button text.
+set(handles.pushbutton1, 'Enable' , 'off')
+set(handles.pushbutton1, 'String' , 'WORKING...')
+pause(0.1);
+
 %Import and merge data to send
 % using merge_indata function
 senddat = merge_indata(handles.geom_data, handles.calc_settings);
@@ -104,6 +109,10 @@ end
 % Increase plot nr if that checkbox is set
 handles.calc_settings(5) = fignr + get(handles.checkbox2 , 'Value');
 set(handles.uitable2 , 'data' , handles.calc_settings);
+
+% Enable button done and restore button text.
+set(handles.pushbutton1, 'Enable' , 'on')
+set(handles.pushbutton1, 'String' , 'Run Calculation')
 
 %Update values, save and exit
 guidata(hObject, handles);

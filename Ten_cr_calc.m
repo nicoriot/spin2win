@@ -106,8 +106,15 @@ for i = 1:1:length(r)
     
     %Calculate displacements
     intf(i) = r(i)*((Ten_c(i)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
-              -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(i)/e.Er(k));
-    % not the correct equations see 2.20 e_z still unknown
+              -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(i)/e.Er(k)-v_zc(k)*e_z(i));
+    % not the correct equations see 2.20 e_z still unknown, set to 0
+    
+    e_c = (Ten_c(i)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
+          -(Ten_r(i)/e.Er(k))*(v_rc(k)+v_zc(k)*v_rz(k))-v_zc(k)*e_z(i);
+          
+    e_r = (Ten_r(i)/e.Er(k))*(1-v_zr(k)*v_rz(k))...
+          -(Ten_c(i)/e.Ec(k))*(e.v_cr(k)+v_zr(k)*v_cz(k))-v_zr(k)*e_z(i); 
+      
 end
 
 end

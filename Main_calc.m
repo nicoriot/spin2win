@@ -206,8 +206,8 @@ Pd_still = Pd;
 
 % Calcualte the stresses in standstill case
 % with the Ten_cr_calc subroutine
-[Ten_c(1,1:1:d.y), Ten_r(1,1:1:d.y), ...
-    intf(1,1:1:d.y), ~ , ~, ~  ] = Ten_cr_calc(Pd,d,0);
+ [Ten_c(1,1:1:d.y), Ten_r(1,1:1:d.y), intf(1,1:1:d.y), ...
+ e_c(1,1:1:d.y) , e_r(1,1:1:d.y), ~  ] = Ten_cr_calc(Pd,d,0);
 
 % Reset Pd to previous approximate values for next run
 Pd = Pd_t;
@@ -217,8 +217,8 @@ Pd = Pd_t;
 
 % Calcualte Pressfit stresses due to rotating pressfit
 % with the Ten_cr_calc subroutine
-[Ten_c(3,1:1:d.y), Ten_r(3,1:1:d.y), ...
-     intf(2,1:1:d.y), ~ , ~, ~  ] = Ten_cr_calc(Pd,d,d.n);
+ [Ten_c(3,1:1:d.y), Ten_r(3,1:1:d.y), intf(2,1:1:d.y), ...
+ e_c(2,1:1:d.y) , e_r(2,1:1:d.y), ~  ] = Ten_cr_calc(Pd,d,d.n);
 end % end for if statement about number of shells
 
 % Sacling from Pa to MPa for easier enterpritation
@@ -444,8 +444,11 @@ out.intf = intf       ;
 out.r_mark = r_mark   ;
 out.r_mark2 = r_mark2 ;
 out.r = r             ;
-out.ri = d.ri           ;
+out.ri = d.ri         ;
 out.stamp = stamp     ;
+out.e_r = e_r         ;
+out.e_c = e_c         ;
+out.e_z = e_z         ;
 
 % General data
 out.P_standstill = Pd_still  ;
