@@ -22,8 +22,10 @@ Ten_r = zeros(1,length(r));
 intf = zeros(1,length(r));
 e_c = zeros(1,length(r));
 e_r = zeros(1,length(r));
-e_z = zeros(1,length(r));
+e_z = zeros(1,e.m); % constant for each shell therefore e.m not length(r)  
 b = zeros(1,e.m);
+a = zeros(1,e.m);
+D = zeros(1,e.m);
 v_rc = zeros(1,e.m);
 v_rz = zeros(1,e.m);
 v_zr = zeros(1,e.m);
@@ -57,8 +59,9 @@ v_min = min([e.v_cr(:);v_rc(:);v_rz(:);v_zr(:);v_zc(:);v_cz(:)]);
 
 % Make Young's modulus quotas and b quota
 for k = 1:1:e.m
-u(k) = sqrt((e.Ec(k)/e.Er(k))*((1-v_rz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k))));
-b(k) = (e.v_cr(k)+v_cz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k));
+u(k) = sqrt((e.Ec(k)/e.Er(k))*((1-v_rz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)))); % my
+b(k) = (e.v_cr(k)+v_cz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)); % beta
+a(k) = e.Ec(k)*((e_z(k)*(v_zc(k)-v_zr(k)))/(1-v_zc(k)*v_cz(k))); %alpha
 end
 
 % Copy input value to preassure vector
@@ -79,12 +82,14 @@ for k = 1:1:e.m
 Q(k) = (e.p(k)*w^2*(3+b(k))/(u(k)^2-9)); %last part of 2.20
 Q2(k) = e.p(k)*w^2*(u(k)^2+3*b(k))/(u(k)^2-9); % last part of 2.22
 
+D(k) = a(k)/(u(k)^2-1); % D from thesis compliment.
+
 C1(k) = (((e.ri(k)*e.ro(k))^(u(k)))/(e.ri(k)^(2*u(k))-e.ro(k)^(2*u(k))))...
         *(Q(k)*(e.ri(k)^3*e.ro(k)^(u(k))-e.ro(k)^3*e.ri(k)^(u(k)))...
-        +Pi(k)*e.ro(k)^(u(k))*e.ri(k)-Po(k)*e.ri(k)^(u(k))*e.ro(k));
+        +(Pi(k)-D(k))*e.ro(k)^(u(k))*e.ri(k)+(D(k)-Po(k))*e.ri(k)^(u(k))*e.ro(k));
 
-C2(k) = (Q(k)*(e.ro(k)^(u(k)+3)-e.ri(k)^(u(k)+3))+Po(k)*e.ro(k)^(u(k)+1)-...
-        Pi(k)*e.ri(k)^(u(k)+1))/(e.ri(k)^(2*u(k))-e.ro(k)^(2*u(k)));
+C2(k) = (Q(k)*(e.ro(k)^(u(k)+3)-e.ri(k)^(u(k)+3))+(Po(k)-D(k))*e.ro(k)^(u(k)+1)+...
+        (D(k)-Pi(k))*e.ri(k)^(u(k)+1))/(e.ri(k)^(2*u(k))-e.ro(k)^(2*u(k)));
 
 end
 
@@ -100,20 +105,20 @@ for i = 1:1:length(r)
     k = max(k,1); %Limit k to prevent index overflow.
     
     % Calculate stresses
-    Ten_r(i) = C1(k)*r(i)^(-1-u(k))+C2(k)*r(i)^(-1+u(k))+Q(k)*r(i)^2;
+    Ten_r(i) = C1(k)*r(i)^(-1-u(k))+C2(k)*r(i)^(-1+u(k))+Q(k)*r(i)^2-D(k);
     
-    Ten_c(i) = u(k)*(C2(k)*r(i)^(-1+u(k))-C1(k)*r(i)^(-1-u(k)))+Q2(k)*r(i)^2;
+    Ten_c(i) = u(k)*(C2(k)*r(i)^(-1+u(k))-C1(k)*r(i)^(-1-u(k)))+Q2(k)*r(i)^2-D(k);
     
     %Calculate displacements
     intf(i) = r(i)*((Ten_c(i)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
-              -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(i)/e.Er(k)-v_zc(k)*e_z(i));
+              -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(i)/e.Er(k)-v_zc(k)*e_z(k));
     % not the correct equations see 2.20 e_z still unknown, set to 0
     
     e_c(i) = (Ten_c(i)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
-          -(Ten_r(i)/e.Er(k))*(v_rc(k)+v_zc(k)*v_rz(k))-v_zc(k)*e_z(i);
+          -(Ten_r(i)/e.Er(k))*(v_rc(k)+v_zc(k)*v_rz(k))-v_zc(k)*e_z(k);
           
     e_r(i) = (Ten_r(i)/e.Er(k))*(1-v_zr(k)*v_rz(k))...
-          -(Ten_c(i)/e.Ec(k))*(e.v_cr(k)+v_zr(k)*v_cz(k))-v_zr(k)*e_z(i); 
+          -(Ten_c(i)/e.Ec(k))*(e.v_cr(k)+v_zr(k)*v_cz(k))-v_zr(k)*e_z(k); 
       
 end
 

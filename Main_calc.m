@@ -44,9 +44,9 @@ intf    = zeros(2,length(r));
 % 1: Displacment values at standstill. 
 % 2: Displacement values while rotating at max rpm.
 
-e_c = zeros(2,length(r));
-e_r = zeros(2,length(r));
-e_z = zeros(2,length(r));
+e_c = zeros(2,d.m); % short due to constant wiht r for each shell
+e_r = zeros(2,d.m); % therefore d.m and not length(r)
+e_z = zeros(2,d.m);
 % 1: Strain at standstill. 
 % 2: Strain while rotating at max rpm.
 
@@ -107,8 +107,8 @@ dr = abs(dr);
 % using Ten_cr_calc subroutine with zero shell interference
 Pdz = zeros(1,d.m-1);
 
-[Ten_c(2,1:1:d.y), Ten_r(2,1:1:d.y), ...
-intf(2,1:1:d.y), ~ , ~ , ~ ] = Ten_cr_calc(Pdz,d,d.n);
+[Ten_c(2,1:1:d.y), Ten_r(2,1:1:d.y), intf(2,1:1:d.y), ...
+e_c(2,1:1:d.y) , e_r(2,1:1:d.y), ~ ] = Ten_cr_calc(Pdz,d,d.n);
 
 %skip all pressfit calcualtions if there is less than 2 shells
 if d.m ~= 1
