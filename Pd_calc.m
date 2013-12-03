@@ -6,7 +6,7 @@ function [z] = Pd_calc(x,e,n)
 dr      = zeros(1,e.m);
 Ten_c   = zeros(1,e.m-1);
 Ten_r   = zeros(1,e.m-1);
-e_z     = zeros(1,e.m-1);
+e_z     = zeros(1,e.m);
 u       = zeros(1,e.m);
 Pi      = zeros(1,e.m-1);
 Po      = zeros(1,e.m-1);
@@ -18,6 +18,8 @@ z       = zeros(1,e.m-1);
 di      = zeros(1,e.m-1);
 do      = zeros(1,e.m-1);
 b       = zeros(1,e.m);
+a       = zeros(1,e.m);
+D       = zeros(1,e.m);
 v_rc    = zeros(1,e.m);
 v_rz    = zeros(1,e.m);
 v_zr    = zeros(1,e.m);
@@ -38,8 +40,9 @@ end
 
 % Make Young's modulus quotas and b quota
 for k = 1:1:e.m
-u(k) = sqrt((e.Ec(k)/e.Er(k))*((1-v_rz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k))));
-b(k) = (e.v_cr(k)+v_cz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k));
+u(k) = sqrt((e.Ec(k)/e.Er(k))*((1-v_rz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)))); % my
+b(k) = (e.v_cr(k)+v_cz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)); % beta
+a(k) = e.Ec(k)*((e_z(k)*(v_zc(k)-v_zr(k)))/(1-v_zc(k)*v_cz(k))); %alpha
 end
 
 % Interface calc
@@ -68,12 +71,14 @@ for k = 1:1:e.m
 Q(k) = (e.p(k)*w^2*(3+b(k))/(u(k)^2-9)); %last part of 2.20
 Q2(k) = e.p(k)*w^2*(u(k)^2+3*b(k))/(u(k)^2-9); % last part of 2.22
 
+D(k) = a(k)/(u(k)^2-1); % D from thesis compliment.
+
 C1(k) = (((e.ri(k)*e.ro(k))^(u(k)))/(e.ri(k)^(2*u(k))-e.ro(k)^(2*u(k))))...
         *(Q(k)*(e.ri(k)^3*e.ro(k)^(u(k))-e.ro(k)^3*e.ri(k)^(u(k)))...
-        +Pi(k)*e.ro(k)^(u(k))*e.ri(k)-Po(k)*e.ri(k)^(u(k))*e.ro(k));
+        +(Pi(k)-D(k))*e.ro(k)^(u(k))*e.ri(k)+(D(k)-Po(k))*e.ri(k)^(u(k))*e.ro(k));
 
-C2(k) = (Q(k)*(e.ro(k)^(u(k)+3)-e.ri(k)^(u(k)+3))+Po(k)*e.ro(k)^(u(k)+1)-...
-        Pi(k)*e.ri(k)^(u(k)+1))/(e.ri(k)^(2*u(k))-e.ro(k)^(2*u(k)));
+C2(k) = (Q(k)*(e.ro(k)^(u(k)+3)-e.ri(k)^(u(k)+3))+(Po(k)-D(k))*e.ro(k)^(u(k)+1)+...
+        (D(k)-Pi(k))*e.ri(k)^(u(k)+1))/(e.ri(k)^(2*u(k))-e.ro(k)^(2*u(k)));
 
 end
 
@@ -84,10 +89,11 @@ end
     % Calc shell k+1 inner displacement di
     k=k+1;
     
-    Ten_r(k-1) = C1(k)*e.ri(k)^(-1-u(k))+C2(k)*e.ri(k)^(-1+u(k))+Q(k)*e.ri(k)^2;
+    % Calculate stresses
+    Ten_r(k-1) = C1(k)*e.ri(k)^(-1-u(k))+C2(k)*e.ri(k)^(-1+u(k))+Q(k)*e.ri(k)^2-D(k-1);
     
     Ten_c(k-1) = u(k)*(C2(k)*e.ri(k)^(-1+u(k))-C1(k)*e.ri(k)^(-1-u(k)))...
-                 +Q2(k)*e.ri(k)^2;
+                 +Q2(k)*e.ri(k)^2-D(k-1);
     
     di(k-1) = e.ri(k)*((Ten_c(k-1)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
               -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(k-1)/e.Er(k)-v_zc(k)*e_z(k-1));
@@ -95,10 +101,10 @@ end
     k=k-1;
     
     % Calc shell k outer displacement do
-    Ten_r(k) = C1(k)*e.ro(k)^(-1-u(k))+C2(k)*e.ro(k)^(-1+u(k))+Q(k)*e.ro(k)^2;
+    Ten_r(k) = C1(k)*e.ro(k)^(-1-u(k))+C2(k)*e.ro(k)^(-1+u(k))+Q(k)*e.ro(k)^2-D(k);
     
     Ten_c(k) = u(k)*(C2(k)*e.ro(k)^(-1+u(k))-C1(k)*e.ro(k)^(-1-u(k)))...
-               +Q2(k)*e.ro(k)^2;
+               +Q2(k)*e.ro(k)^2-D(k);
     
     do(k) = e.ro(k)*((Ten_c(k)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
             -(v_rc(k)+v_zc(k)*v_rz(k))*Ten_r(k)/e.Er(k)-v_zc(k)*e_z(k)); 
