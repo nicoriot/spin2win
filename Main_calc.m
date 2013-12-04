@@ -108,7 +108,11 @@ dr = abs(dr);
 Pdz = zeros(1,d.m-1);
 
 [Ten_c(2,1:1:d.y), Ten_r(2,1:1:d.y), intf(2,1:1:d.y), ...
-e_c(2,1:1:d.y) , e_r(2,1:1:d.y), ~ ] = Ten_cr_calc(Pdz,d,d.n);
+e_c(2,1:1:d.y), e_r(2,1:1:d.y), ~ ] = Ten_cr_calc(Pdz,d,d.n);
+
+% Dummy test run ez_calc
+[ out.SE, e_c, e_r, e_z ] = ez_calc(0,d,d.n);
+% Dymmy end
 
 %skip all pressfit calcualtions if there is less than 2 shells
 if d.m ~= 1

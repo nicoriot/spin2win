@@ -76,6 +76,10 @@ Pi(k+1) = Pd(k);
 Po(k) = Pd(k);
 end
 
+% DUMMY e_z REMEMEBER TO REMOVE
+e_z(1) = -0.001521;
+% DUMMY END
+
 % Make C1 C2 and Q constants using eq 2.28 and 2.29 from theory chapter
 for k = 1:1:e.m   
     
