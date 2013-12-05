@@ -62,7 +62,7 @@ Po(k) = Pd(k);
 end
 
 % sweep e_z over range, calcualte energy
-e_z =(-0.005:0.00001:0.0025);
+e_z =(-0.01:0.00001:0.01);
 SE = zeros(1,length(e_z));
 for i = 1:1:length(e_z)
     
