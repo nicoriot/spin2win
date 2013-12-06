@@ -8,6 +8,8 @@ function [out] = Main_calc(indata,prefix)
 % E_M_calc      - Energy, Mass calculator
 %%%%
 
+disp('*** *** ***  RUNNING MAIN_CALC  *** *** ***');
+
 % Extract number of active shells from indata
 d.m = indata(8,5);
 
@@ -32,6 +34,8 @@ step  =  0.000001   ;  % [m] Radial step size used in calculations
 % Initiate radial vector to get avaliable cylinder radial positions
 r = min(d.ri):step:max(d.ro); % radial vector
 
+d.y     = length(r); % add length of r into d for usage in subroutines
+
 %********** Preallocating vectors *********
 dr      = zeros(1,d.m);
 Ten_c   = zeros(3,length(r)); % Hoop
@@ -44,9 +48,9 @@ intf    = zeros(2,length(r));
 % 1: Displacment values at standstill. 
 % 2: Displacement values while rotating at max rpm.
 
-e_c = zeros(2,d.m); % short due to constant wiht r for each shell
-e_r = zeros(2,d.m); % therefore d.m and not length(r)
-e_z = zeros(2,d.m);
+e_c = zeros(2,d.y); 
+e_r = zeros(2,d.y); 
+e_z = zeros(2,d.m); % constant for each shell therefore e.m not length(r)
 % 1: Strain at standstill. 
 % 2: Strain while rotating at max rpm.
 
@@ -69,8 +73,6 @@ Ten_r_max     = zeros(3,d.m);
 Ten_r_min     = zeros(3,d.m);
 intf_max      = zeros(2,d.m);
 intf_min      = zeros(2,d.m);
-
-d.y     = length(r); % add length of r into d for usage in subroutines
 
 %********** Preallocating DONE *********
 
@@ -107,14 +109,8 @@ dr = abs(dr);
 % using Ten_cr_calc subroutine with zero shell interference
 Pdz = zeros(1,d.m-1);
 
-% Dummy test run ez_calc
-[ out.SE, e_c, e_r, e_z ] = ez_calc(0,d,d.n);
-% Dymmy end
-
-[Ten_c(2,1:1:d.y), Ten_r(2,1:1:d.y), intf(2,1:1:d.y), ...
-e_c(2,1:1:d.y), e_r(2,1:1:d.y), ~ ] = Ten_cr_calc(Pdz,d,d.n);
-
-
+[ Ten_c(2,1:1:d.y), Ten_r(2,1:1:d.y), intf(2,1:1:d.y),...
+e_c(2,1:1:d.y),e_r(2,1:1:d.y),e_z(2,1:1:d.m)] = Ten_cr_calc(Pdz,d,d.n);
 
 %skip all pressfit calcualtions if there is less than 2 shells
 if d.m ~= 1
@@ -212,8 +208,7 @@ Pd_still = Pd;
 
 % Calcualte the stresses in standstill case
 % with the Ten_cr_calc subroutine
- [Ten_c(1,1:1:d.y), Ten_r(1,1:1:d.y), intf(1,1:1:d.y), ...
- e_c(1,1:1:d.y) , e_r(1,1:1:d.y), ~  ] = Ten_cr_calc(Pd,d,0);
+ [Ten_c(1,1:1:d.y), Ten_r(1,1:1:d.y), intf(1,1:1:d.y),~,~,~] = Ten_cr_calc(Pd,d,0);
 
 % Reset Pd to previous approximate values for next run
 Pd = Pd_t;
@@ -223,8 +218,7 @@ Pd = Pd_t;
 
 % Calcualte Pressfit stresses due to rotating pressfit
 % with the Ten_cr_calc subroutine
- [Ten_c(3,1:1:d.y), Ten_r(3,1:1:d.y), intf(2,1:1:d.y), ...
- e_c(2,1:1:d.y) , e_r(2,1:1:d.y), ~  ] = Ten_cr_calc(Pd,d,d.n);
+ [Ten_c(3,1:1:d.y), Ten_r(3,1:1:d.y), intf(2,1:1:d.y),~,~,~] = Ten_cr_calc(Pd,d,d.n);
 end % end for if statement about number of shells
 
 % Sacling from Pa to MPa for easier enterpritation

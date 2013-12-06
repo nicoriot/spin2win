@@ -82,7 +82,7 @@ varargout{1} = handles.output;
 function pushbutton1_Callback(hObject, eventdata, handles)
 
 % Disable button when pressed/working and change button text.
-set(handles.pushbutton1, 'Enable' , 'off')
+% set(handles.pushbutton1, 'Enable' , 'off')
 set(handles.pushbutton1, 'String' , 'WORKING...')
 pause(0.1);
 
