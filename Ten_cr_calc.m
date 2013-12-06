@@ -64,6 +64,10 @@ v_min = min([e.v_cr(:);v_rc(:);v_rz(:);v_zr(:);v_zc(:);v_cz(:)]);
 for k = 1:1:e.m
  [ ~, e_z(k) ] = ez_calc(x,e,n,k);
 end
+
+ % force e_z to Solidworks value, for testing only
+ % e_z(1) = -0.000304; %CFREF
+ %e_z(1) = -0.001121; %ALREF
  %%%%%% DUMMY %%%%%%
  
 % Make Young's modulus quotas and b quota
@@ -116,7 +120,8 @@ for i = 1:1:length(r)
     % Calculate stresses
     Ten_r(i) = C1(k)*r(i)^(-1-u(k))+C2(k)*r(i)^(-1+u(k))+Q(k)*r(i)^2-D(k);
     
-    Ten_c(i) = u(k)*(C2(k)*r(i)^(-1+u(k))-C1(k)*r(i)^(-1-u(k)))+Q2(k)*r(i)^2-D(k);
+    Ten_c(i) = u(k)*(C2(k)*r(i)^(-1+u(k))-C1(k)*r(i)^(-1-u(k)))...
+               +Q2(k)*r(i)^2-D(k);
     
     %Calculate displacements
     intf(i) = r(i)*((Ten_c(i)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
