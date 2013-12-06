@@ -57,8 +57,10 @@ Pd = P;
 Pi(1) = 0;
 Po(e.m) = 0;
 for k=1:1:e.m-1
-Pi(k+1) = Pd(k); 
-Po(k) = Pd(k);
+%    Pi(k+1) = Pd(k); 
+Pi(k+1) = 0; % HACK, REMOVE DURING MERGE   
+%Po(k) = Pd(k);
+Po(k) = 0; % HACK, REMOVE DURING MERGE
 end
 
 % sweep e_z over range, calcualte energy
