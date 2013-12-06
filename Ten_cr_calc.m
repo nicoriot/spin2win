@@ -8,6 +8,8 @@ function [ Ten_c, Ten_r, intf, e_c, e_r, e_z ] = Ten_cr_calc(x,e,n)
 % e_r = Radial strain
 % e_z = Axial strain
 
+disp('*** *** ***  RUNNING TEN_CR_CALC  *** *** ***');
+
 % Preallocating vectors
 u = zeros(1,e.m);
 Pi = zeros(1,e.m-1);
@@ -57,6 +59,13 @@ v_min = min([e.v_cr(:);v_rc(:);v_rz(:);v_zr(:);v_zc(:);v_cz(:)]);
     disp('');
  end
 
+ %%%%%% DUMMY %%%%%%
+ %call e_z_calc for e_z calcualtion in each k
+for k = 1:1:e.m
+ [ ~, e_z(k) ] = ez_calc(x,e,n,k);
+end
+ %%%%%% DUMMY %%%%%%
+ 
 % Make Young's modulus quotas and b quota
 for k = 1:1:e.m
 u(k) = sqrt((e.Ec(k)/e.Er(k))*((1-v_rz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)))); % my
@@ -75,10 +84,6 @@ for k=1:1:e.m-1
 Pi(k+1) = Pd(k); 
 Po(k) = Pd(k);
 end
-
-% DUMMY e_z REMEMEBER TO REMOVE
-e_z(1) = -0.001521;
-% DUMMY END
 
 % Make C1 C2 and Q constants using eq 2.28 and 2.29 from theory chapter
 for k = 1:1:e.m   
