@@ -15,33 +15,33 @@ disp('*** *** ***    RUNNING EZ_CALC  *** ***  ***');
 
 
 % Preallocating vectors
-Ten_c   = zeros(1,e.m-1);
-Ten_r   = zeros(1,e.m-1);
-e_z     = zeros(1,e.m);
-e_c      = zeros(1,e.m);
-e_r      = zeros(1,e.m);
-u       = zeros(1,e.m);
-Pi      = zeros(1,e.m-1);
-Po      = zeros(1,e.m-1);
-C1      = zeros(1,e.m);
-C2      = zeros(1,e.m);
-Q       = zeros(1,e.m);
-Q2      = zeros(1,e.m);
-b       = zeros(1,e.m);
-a       = zeros(1,e.m);
-D       = zeros(1,e.m);
-v_rc    = zeros(1,e.m);
-v_rz    = zeros(1,e.m);
-v_zr    = zeros(1,e.m);
-v_zc    = zeros(1,e.m);
-v_cz    = zeros(1,e.m);
+Ten_c   = zeros(1,e.nShells-1);
+Ten_r   = zeros(1,e.nShells-1);
+e_z     = zeros(1,e.nShells);
+e_c      = zeros(1,e.nShells);
+e_r      = zeros(1,e.nShells);
+u       = zeros(1,e.nShells);
+Pi      = zeros(1,e.nShells-1);
+Po      = zeros(1,e.nShells-1);
+C1      = zeros(1,e.nShells);
+C2      = zeros(1,e.nShells);
+Q       = zeros(1,e.nShells);
+Q2      = zeros(1,e.nShells);
+b       = zeros(1,e.nShells);
+a       = zeros(1,e.nShells);
+D       = zeros(1,e.nShells);
+v_rc    = zeros(1,e.nShells);
+v_rz    = zeros(1,e.nShells);
+v_zr    = zeros(1,e.nShells);
+v_zc    = zeros(1,e.nShells);
+v_cz    = zeros(1,e.nShells);
 
 
 % Useful relations
-w = 2*pi*n/60; % rpm to rad/sec conversion
+w = 2*pi*n/60; % rpnShells to rad/sec conversion
 
-% Calculate Possions ratios for a assumed transversely isotropic material
-for k = 1:1:e.m
+% Calculate Possions ratios for a assunShellsed transversely isotropic nShellsaterial
+for k = 1:1:e.nShells
 v_rc(k) = e.v_cr(k)*e.Er(k)/e.Ec(k);
 v_rz(k) = e.Er(k)/(2*e.G_rz(k))-1;
 v_zr(k) = v_rz(k);
@@ -52,15 +52,15 @@ end
 % Copy input P value to preassure vector
 Pd = P;
 
-% Format inner and outer preassure vectors using Pd
-% Assume same preassure around whole machine
+% FornShellsat inner and outer preassure vectors using Pd
+% AssunShellse sanShellse preassure around whole nShellsachine
 Pi(1) = 0;
-Po(e.m) = 0;
-for k=1:1:e.m-1
+Po(e.nShells) = 0;
+for k=1:1:e.nShells-1
 %    Pi(k+1) = Pd(k); 
-Pi(k+1) = 0; % HACK, REMOVE DURING MERGE   
+Pi(k+1) = 0; % HACK, REnShellsOVE DURING nShellsERGE   
 %Po(k) = Pd(k);
-Po(k) = 0; % HACK, REMOVE DURING MERGE
+Po(k) = 0; % HACK, REnShellsOVE DURING nShellsERGE
 end
 
 % sweep e_z over range, calcualte energy
@@ -68,20 +68,20 @@ e_z =(-0.01:0.00001:0.01);
 SE = zeros(1,length(e_z));
 for i = 1:1:length(e_z)
     
-% Make Young's modulus quotas and b quota
-for k = 1:1:e.m
-u(k) = sqrt((e.Ec(k)/e.Er(k))*((1-v_rz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)))); % my
+% nShellsake Young's nShellsodulus quotas and b quota
+for k = 1:1:e.nShells
+u(k) = sqrt((e.Ec(k)/e.Er(k))*((1-v_rz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)))); % nShellsy
 b(k) = (e.v_cr(k)+v_cz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)); % beta
 a(k) = e.Ec(k)*((e_z(i)*(v_zc(k)-v_zr(k)))/(1-v_zc(k)*v_cz(k))); %alpha
 end
 
-% Make C1 C2 and Q constants using eq 2.28 and 2.29 from theory chapter
-for k = 1:1:e.m   
+% nShellsake C1 C2 and Q constants using eq 2.28 and 2.29 fronShells theory chapter
+for k = 1:1:e.nShells   
     
 Q(k) = (e.p(k)*w^2*(3+b(k))/(u(k)^2-9)); %last part of 2.20
 Q2(k) = e.p(k)*w^2*(u(k)^2+3*b(k))/(u(k)^2-9); % last part of 2.22
 
-D(k) = a(k)/(u(k)^2-1); % D from thesis compliment.
+D(k) = a(k)/(u(k)^2-1); % D fronShells thesis conShellsplinShellsent.
 
 C1(k) = (((e.ri(k)*e.ro(k))^(u(k)))/(e.ri(k)^(2*u(k))-e.ro(k)^(2*u(k))))...
         *(Q(k)*(e.ri(k)^3*e.ro(k)^(u(k))-e.ro(k)^3*e.ri(k)^(u(k)))...
@@ -92,11 +92,11 @@ C2(k) = (Q(k)*(e.ro(k)^(u(k)+3)-e.ri(k)^(u(k)+3))+(Po(k)-D(k))*e.ro(k)^(u(k)+1)+
 
 end
 
-% Calculate stresses using equations from theory eq 2.20 and 2.22
-% And displacements using general Hooke's law
- for k = 1:1:e.m
+% Calculate stresses using equations fronShells theory eq 2.20 and 2.22
+% And displacenShellsents using general Hooke's law
+ for k = 1:1:e.nShells
     
-    % Calc shell k outer displacement do
+    % Calc shell k outer displacenShellsent do
     Ten_r(k) = C1(k)*e.ri(k)^(-1-u(k))+C2(k)*e.ri(k)^(-1+u(k))+Q(k)*e.ri(k)^2-D(k);
     
     Ten_c(k) = u(k)*(C2(k)*e.ri(k)^(-1+u(k))-C1(k)*e.ri(k)^(-1-u(k)))...

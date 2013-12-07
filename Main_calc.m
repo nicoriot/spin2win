@@ -1,4 +1,4 @@
-function [out] = Main_calc(indata,prefix)
+function [out] = Main_calc(Data,indata,prefix)
 % Pressure and stress calculator for composite and isotropic materials
 
 %%% NOTE!!!!!!!!!!
@@ -8,19 +8,17 @@ function [out] = Main_calc(indata,prefix)
 % E_M_calc      - Energy, Mass calculator
 %%%%
 
-% Extract number of active shells from indata
-d.m = indata(8,5);
-
 % Place the rest of indata into variables, collect all data in the d-struct
-d.ri = indata(1,1:1:d.m)/2000; % [m] Inner radius, scale from mm, dia to m, radius
-d.ro = indata(2,1:1:d.m)/2000; % [m] Outer radius, scale from mm, dia to m, radius
-d.Ec = indata(3,1:1:d.m)*10^9; % [Pa] Youngs Modulus, Hoop
-d.Er = indata(4,1:1:d.m)*10^9; % [Pa ]Youngs Modulus, Radial
-d.v_cr  = indata(5,1:1:d.m);      % Possions ratio, cirumference - radial direction
-d.p  = indata(6,1:1:d.m);      % [kg/m3] Material density
-d.uu = indata(7,1:1:d.m);      % Static friction coifficient
-d.G_rz = indata(9,1:1:d.m)*10^9;  % Shear modulus radial-axial
-d.C = indata(10,1:1:d.m);  % Shear modulus radial-axial
+d.nShells = Data.nShells;
+d.ri = indata(1,1:1:Data.nShells)/2000; % [m] Inner radius, scale from mm, dia to m, radius
+d.ro = indata(2,1:1:Data.nShells)/2000; % [m] Outer radius, scale from mm, dia to m, radius
+d.Ec = indata(3,1:1:Data.nShells)*10^9; % [Pa] Youngs Modulus, Hoop
+d.Er = indata(4,1:1:Data.nShells)*10^9; % [Pa ]Youngs Modulus, Radial
+d.v_cr  = indata(5,1:1:Data.nShells);      % Possions ratio, cirumference - radial direction
+d.p  = indata(6,1:1:Data.nShells);      % [kg/m3] Material density
+d.uu = indata(7,1:1:Data.nShells);      % Static friction coifficient
+d.G_rz = indata(9,1:1:Data.nShells)*10^9;  % Shear modulus radial-axial
+d.C = indata(10,1:1:Data.nShells);  % Shear modulus radial-axial
 
 d.h = indata(8,2)/1000;     % [m] Cylinder height, scale from mm to m
 d.n  = indata(8,3);          % Rotationalspeed rpm
@@ -33,7 +31,7 @@ step  =  0.000001   ;  % [m] Radial step size used in calculations
 r = min(d.ri):step:max(d.ro); % radial vector
 
 %********** Preallocating vectors *********
-dr      = zeros(1,d.m);
+dr      = zeros(1,Data.nShells);
 Ten_c   = zeros(3,length(r)); % Hoop
 Ten_r   = zeros(3,length(r)); % Radial
 % 1: Pressfit standstill stress.
@@ -44,31 +42,31 @@ intf    = zeros(2,length(r));
 % 1: Displacment values at standstill. 
 % 2: Displacement values while rotating at max rpm.
 
-e_c = zeros(2,d.m); % short due to constant wiht r for each shell
-e_r = zeros(2,d.m); % therefore d.m and not length(r)
-e_z = zeros(2,d.m);
+e_c = zeros(2,Data.nShells); % short due to constant wiht r for each shell
+e_r = zeros(2,Data.nShells); % therefore Data.nShells and not length(r)
+e_z = zeros(2,Data.nShells);
 % 1: Strain at standstill. 
 % 2: Strain while rotating at max rpm.
 
-Pd      = zeros(1,d.m-1);            %interface preassure storage vector
-K       = zeros(1,d.m-1);
-U       = zeros(1,d.m-1);
-b       = zeros(1,d.m);
-u       = zeros(1,d.m);
-j       = zeros(1,d.m);
-Ten_o   = zeros(1,d.m);
-A       = zeros(3*(d.m-1) , 3*(d.m-1)); 
-B       = zeros(3*(d.m-1) , 1);
-Pd_still      = zeros(1,d.m-1);
-r_mark        = zeros(1,d.m);
-r_mark2       = zeros(1,d.m);
+Pd      = zeros(1,Data.nShells-1);            %interface preassure storage vector
+K       = zeros(1,Data.nShells-1);
+U       = zeros(1,Data.nShells-1);
+b       = zeros(1,Data.nShells);
+u       = zeros(1,Data.nShells);
+j       = zeros(1,Data.nShells);
+Ten_o   = zeros(1,Data.nShells);
+A       = zeros(3*(Data.nShells-1) , 3*(Data.nShells-1)); 
+B       = zeros(3*(Data.nShells-1) , 1);
+Pd_still      = zeros(1,Data.nShells-1);
+r_mark        = zeros(1,Data.nShells);
+r_mark2       = zeros(1,Data.nShells);
 warning_flags = zeros(1,5);
-Ten_c_max     = zeros(3,d.m);
-Ten_c_min     = zeros(3,d.m);
-Ten_r_max     = zeros(3,d.m);
-Ten_r_min     = zeros(3,d.m);
-intf_max      = zeros(2,d.m);
-intf_min      = zeros(2,d.m);
+Ten_c_max     = zeros(3,Data.nShells);
+Ten_c_min     = zeros(3,Data.nShells);
+Ten_r_max     = zeros(3,Data.nShells);
+Ten_r_min     = zeros(3,Data.nShells);
+intf_max      = zeros(2,Data.nShells);
+intf_min      = zeros(2,Data.nShells);
 
 d.y     = length(r); % add length of r into d for usage in subroutines
 
@@ -77,7 +75,7 @@ d.y     = length(r); % add length of r into d for usage in subroutines
 
 % Useful constant relations calcualtions
 w = 2*pi*d.n/60; % rpm to rad/sec conversion
-for k = 1:1:d.m
+for k = 1:1:Data.nShells
     % radius quota, used in equation
     b(k) = d.ri(k)/d.ro(k); 
 
@@ -92,7 +90,7 @@ for k = 1:1:d.m
 end
 
 % Interface calculation between shells
-for i = 1:1:d.m-1
+for i = 1:1:Data.nShells-1
     dr(i) = d.ro(i)-d.ri(i+1);
     if abs(dr(i)) < 0.01*10^-6
         dr(i) = 0.01*10^-6;
@@ -105,7 +103,7 @@ dr = abs(dr);
 
 % Calculate stresses due to pure centrifugal forces
 % using Ten_cr_calc subroutine with zero shell interference
-Pdz = zeros(1,d.m-1);
+Pdz = zeros(1,Data.nShells-1);
 
 % Dummy test run ez_calc
 [ out.SE, e_c, e_r, e_z ] = ez_calc(0,d,d.n);
@@ -117,13 +115,13 @@ e_c(2,1:1:d.y), e_r(2,1:1:d.y), ~ ] = Ten_cr_calc(Pdz,d,d.n);
 
 
 %skip all pressfit calcualtions if there is less than 2 shells
-if d.m ~= 1
+if Data.nShells ~= 1
 
 % Calculate approximate preassures using 
 % a simple linear matrix. Based on standard pressfit formulas.
 
 % Section preassure calc factors used i matrix
-for k = 1:1:d.m-1
+for k = 1:1:Data.nShells-1
     K(k) = d.ri(k+1)*((d.ro(k+1)^2+d.ri(k+1)^2)/(d.Ec(k+1)*(d.ro(k+1)^2 ...
           -d.ri(k+1)^2))+d.v_cr(k+1)/d.Er(k+1));
       
@@ -158,32 +156,32 @@ end
 % Matrix maker
 
 % Pd do fill
-for k=1:1:d.m-1
+for k=1:1:Data.nShells-1
     A(k , k)=K(k);
-    A(k , (d.m-1+k)) = -1;  
+    A(k , (Data.nShells-1+k)) = -1;  
 end
 
 % Pd di fill
-for k=1:1:d.m-1
-    A(d.m-1+k , k) = -U(k);
-    A(d.m-1+k , 2*(d.m-1)+k) = -1;
+for k=1:1:Data.nShells-1
+    A(Data.nShells-1+k , k) = -U(k);
+    A(Data.nShells-1+k , 2*(Data.nShells-1)+k) = -1;
 end
 
 % do di fill 1
-for k=1:1:d.m-1
-    A(2*(d.m-1)+k , d.m-1+k) = 1;
-    A(2*(d.m-1)+k , 2*(d.m-1)+k) = -1;  
+for k=1:1:Data.nShells-1
+    A(2*(Data.nShells-1)+k , Data.nShells-1+k) = 1;
+    A(2*(Data.nShells-1)+k , 2*(Data.nShells-1)+k) = -1;  
 end
 
 % do di fill 2
-for k=1:1:d.m-2
-    A(2*(d.m-1)+1+k , d.m-1+k) = -1;
-    A(2*(d.m-1)+k , 2*(d.m-1)+1+k) = 1;
+for k=1:1:Data.nShells-2
+    A(2*(Data.nShells-1)+1+k , Data.nShells-1+k) = -1;
+    A(2*(Data.nShells-1)+k , 2*(Data.nShells-1)+1+k) = 1;
 end
 
 % B fill
-for k=1:1:d.m-1
-    B(2*(d.m-1)+k) = dr(k);  
+for k=1:1:Data.nShells-1
+    B(2*(Data.nShells-1)+k) = dr(k);  
 end
 
 % Matrix solver
@@ -194,7 +192,7 @@ D = A\B;
 % Values will be used as input guess into fsolver for finetuning 
 % or major change if an orthotropic material is used  
 Pd_t = 0;
-for k = 1:1:d.m-1
+for k = 1:1:Data.nShells-1
     Pd_t(k) = D(k);
 end
   
@@ -234,35 +232,35 @@ Ten_r = Ten_r/(10^6);
 % Find shell surface radius r length value
 % so that shell interfaces can be marked
 
-for i=1:1:d.m-1
+for i=1:1:Data.nShells-1
 r_mark(1,i) = (d.ri(i+1)/step-d.ri(1)/step)+1;
 
 end
-r_mark(1,d.m)=(d.ro(d.m)/step-d.ri(1)/step)+1;
+r_mark(1,Data.nShells)=(d.ro(Data.nShells)/step-d.ri(1)/step)+1;
 r_mark = floor(r_mark);
 
-for i=1:1:d.m-1
+for i=1:1:Data.nShells-1
     r_mark2(1,i+1)=r_mark(1,i)+2;
 end
 r_mark2(1,1)=1;
 
 % Make min max values vectors for each r_mark
 for i=1:1:3
-    for k=1:1:d.m
+    for k=1:1:Data.nShells
       Ten_c_max(i,k) = max(Ten_c(i,(r_mark2(k)+2):r_mark(k)));
       Ten_c_min(i,k) = min(Ten_c(i,(r_mark2(k)+2):r_mark(k)));
     end
 end
 
 for i=1:1:3
-    for k=1:1:d.m
+    for k=1:1:Data.nShells
       Ten_r_max(i,k) = max(Ten_r(i,(r_mark2(k)+2):r_mark(k)));
       Ten_r_min(i,k) = min(Ten_r(i,(r_mark2(k)+2):r_mark(k)));
     end
 end
 
 for i=1:1:2
-    for k=1:1:d.m
+    for k=1:1:Data.nShells
       intf_max(i,k) = max(intf(i,(r_mark2(k)+2):r_mark(k)));
       intf_min(i,k) = min(intf(i,(r_mark2(k)+2):r_mark(k)));
     end
@@ -299,7 +297,7 @@ disp(['lr: ', num2str(length(r),10)])
 disp(['h: ', num2str(d.h,10)])
 disp(['n: ', num2str(d.n,10)])
 disp(['n_: ', num2str(d.n_,10)])
-disp(['sh: ', num2str(d.m,10)])
+disp(['sh: ', num2str(Data.nShells,10)])
 fprintf('\n')
 format short
 
@@ -319,7 +317,7 @@ disp(['Maximal tension, radial: ', num2str(max(Ten_r(1,:))), ' [MPa]'])
 disp(['Minimal tension, radial: ', num2str(min(Ten_r(1,:))), ' [MPa]'])
 disp('Interference pressures:')
 %Repeat for number of interferences
-for k = 1:1:d.m-1
+for k = 1:1:Data.nShells-1
    disp(['Shell ', num2str(k), '-' , num2str(k+1), ': ', ...
        num2str(Pd_still(k)/10^6), ' [MPa]']) 
 end
@@ -331,28 +329,28 @@ disp(['Maximal tension, radial: ', num2str(max(Ten_r(3,:))), ' [MPa]'])
 disp(['Minimal tension, radial: ', num2str(min(Ten_r(3,:))), ' [MPa]'])
 disp('Interference pressures:')
 %Repeat for number of interferences
-for k = 1:1:d.m-1
+for k = 1:1:Data.nShells-1
    disp(['Shell ', num2str(k), '-' , num2str(k+1), ': ', ... 
        num2str(Pd(k)/10^6), ' [MPa]']) 
 end
 disp('--------------------------------------------------')
 disp('Maximal assembly force needed for shell press-fit mounting:')
 %Repeat for number of interferences
-for k = 1:1:d.m-1
+for k = 1:1:Data.nShells-1
     F = pi*2*d.ro(k)*d.h*d.uu(k)*Pd_still(k)/1000;
     disp(['Shell ', num2str(k), '-' , num2str(k+1), ': ', num2str(F), ' [kN]']) 
 end
 disp('--------------------------------------------------')
 disp('Maximal transferable torque between shells, at standstill:')
 %Repeat for number of interferences
-for k = 1:1:d.m-1
+for k = 1:1:Data.nShells-1
     F = pi*2*d.ro(k)*d.h*d.uu(k)*Pd_still(k)*d.ro(k)/1000;
     disp(['Shell ', num2str(k), '-' , num2str(k+1), ': ', num2str(F), ' [kNm]']) 
 end
 disp('--------------------------------------------------')
 disp('Maximal transferable torque between shells, at max rpm:')
 %Repeat for number of interferences
-for k = 1:1:d.m-1
+for k = 1:1:Data.nShells-1
     F = pi*2*d.ro(k)*d.h*d.uu(k)*Pd(k)*d.ro(k)/1000;
     disp(['Shell ', num2str(k), '-' , num2str(k+1), ': ', num2str(F), ' [kNm]']) 
 end
@@ -360,28 +358,28 @@ disp('--------------------------------------------------')
 
 disp('Shell and system MASS:')
 %Repeat for number of shells
-for k = 1:1:d.m
+for k = 1:1:Data.nShells
     disp(['Shell ', num2str(k), ': ', num2str(Mass(k)), ' [kg]']) 
 end
-disp(['Total: ', num2str(Mass(d.m+1)), ' [kg]']) 
+disp(['Total: ', num2str(Mass(Data.nShells+1)), ' [kg]']) 
 disp('--------------------------------------------------')
 
 disp('Shell and system ENERGY:')
 %Repeat for number of shells
-for k = 1:1:d.m
+for k = 1:1:Data.nShells
     disp(['Shell ', num2str(k), ': ', num2str(Energy(k)/3600), ' [Wh]']) 
 end
-disp(['Total: ', num2str(Energy(d.m+1)/3600), ' [Wh]']) 
-disp(['Total per kg: ', num2str(Energy(d.m+2)/3600), ' [Wh/kg]'])
+disp(['Total: ', num2str(Energy(Data.nShells+1)/3600), ' [Wh]']) 
+disp(['Total per kg: ', num2str(Energy(Data.nShells+2)/3600), ' [Wh/kg]'])
 disp('--------------------------------------------------')
 
 disp('Shell and system COST:')
 %Repeat for number of shells
-for k = 1:1:d.m
+for k = 1:1:Data.nShells
     disp(['Shell ', num2str(k), ': ', num2str(Cost(k)), ' [$]']) 
 end
-disp(['Total: ', num2str(Cost(d.m+1)), ' [$]']) 
-disp(['Total per Wh: ', num2str(Cost(d.m+2)*3600), ' [$/Wh]'])
+disp(['Total: ', num2str(Cost(Data.nShells+1)), ' [$]']) 
+disp(['Total per Wh: ', num2str(Cost(Data.nShells+2)*3600), ' [$/Wh]'])
 disp('--------------------------------------------------')
 
 
