@@ -9,34 +9,34 @@ function [ Ten_c, Ten_r, intf, e_c, e_r, e_z ] = Ten_cr_calc(x,e,n)
 % e_z = Axial strain
 
 % Preallocating vectors
-u = zeros(1,e.m);
-Pi = zeros(1,e.m-1);
-Po = zeros(1,e.m-1);
-C1 = zeros(1,e.m);
-C2 = zeros(1,e.m);
-Q = zeros(1,e.m);
-Q2 = zeros(1,e.m);
+u = zeros(1,e.nShells);
+Pi = zeros(1,e.nShells-1);
+Po = zeros(1,e.nShells-1);
+C1 = zeros(1,e.nShells);
+C2 = zeros(1,e.nShells);
+Q = zeros(1,e.nShells);
+Q2 = zeros(1,e.nShells);
 r = linspace(min(e.ri), max(e.ro), e.y);
 Ten_c = zeros(1,length(r));
 Ten_r = zeros(1,length(r));
 intf = zeros(1,length(r));
 e_c = zeros(1,length(r));
 e_r = zeros(1,length(r));
-e_z = zeros(1,e.m); % constant for each shell therefore e.m not length(r)  
-b = zeros(1,e.m);
-a = zeros(1,e.m);
-D = zeros(1,e.m);
-v_rc = zeros(1,e.m);
-v_rz = zeros(1,e.m);
-v_zr = zeros(1,e.m);
-v_zc = zeros(1,e.m);
-v_cz = zeros(1,e.m);
+e_z = zeros(1,e.nShells); % constant for each shell therefore e.nShells not length(r)  
+b = zeros(1,e.nShells);
+a = zeros(1,e.nShells);
+D = zeros(1,e.nShells);
+v_rc = zeros(1,e.nShells);
+v_rz = zeros(1,e.nShells);
+v_zr = zeros(1,e.nShells);
+v_zc = zeros(1,e.nShells);
+v_cz = zeros(1,e.nShells);
 
 % Useful relations
 w = 2*pi*n/60;                   % rpm to rad/sec conversion
 
 % Calculate Possions ratios for a assumed transversely isotropic material
-for k = 1:1:e.m
+for k = 1:1:e.nShells
 v_rc(k) = e.v_cr(k)*e.Er(k)/e.Ec(k);
 v_rz(k) = e.Er(k)/(2*e.G_rz(k))-1;
 v_zr(k) = v_rz(k);
@@ -58,7 +58,7 @@ v_min = min([e.v_cr(:);v_rc(:);v_rz(:);v_zr(:);v_zc(:);v_cz(:)]);
  end
 
 % Make Young's modulus quotas and b quota
-for k = 1:1:e.m
+for k = 1:1:e.nShells
 u(k) = sqrt((e.Ec(k)/e.Er(k))*((1-v_rz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)))); % my
 b(k) = (e.v_cr(k)+v_cz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)); % beta
 a(k) = e.Ec(k)*((e_z(k)*(v_zc(k)-v_zr(k)))/(1-v_zc(k)*v_cz(k))); %alpha
@@ -70,8 +70,8 @@ Pd = x;
 % Format inner and outer pressure vectors using Pd
 % Assume same pressure around whole machine
 Pi(1) = 0;
-Po(e.m) = 0;
-for k=1:1:e.m-1
+Po(e.nShells) = 0;
+for k=1:1:e.nShells-1
 Pi(k+1) = Pd(k); 
 Po(k) = Pd(k);
 end
@@ -81,7 +81,7 @@ e_z(1) = -0.001521;
 % DUMMY END
 
 % Make C1 C2 and Q constants using eq 2.28 and 2.29 from theory chapter
-for k = 1:1:e.m   
+for k = 1:1:e.nShells   
     
 Q(k) = (e.p(k)*w^2*(3+b(k))/(u(k)^2-9)); %last part of 2.20
 Q2(k) = e.p(k)*w^2*(u(k)^2+3*b(k))/(u(k)^2-9); % last part of 2.22
@@ -102,7 +102,7 @@ end
 k = 1;
 for i = 1:1:length(r)
     
-    k = min(k,e.m-1); %Limit k to prevent index overflow.
+    k = min(k,e.nShells-1); %Limit k to prevent index overflow.
     if r(i) > e.ri(k+1)
     k = k+1;
     end

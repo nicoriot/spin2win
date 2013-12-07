@@ -3,34 +3,34 @@ function [z] = Pd_calc(x,e,n)
 % To be used together wiht fsolve and input preasssures data
 
 % Preallocating vectors
-dr      = zeros(1,e.m);
-Ten_c   = zeros(1,e.m-1);
-Ten_r   = zeros(1,e.m-1);
-e_z     = zeros(1,e.m);
-u       = zeros(1,e.m);
-Pi      = zeros(1,e.m-1);
-Po      = zeros(1,e.m-1);
-C1      = zeros(1,e.m);
-C2      = zeros(1,e.m);
-Q       = zeros(1,e.m);
-Q2      = zeros(1,e.m);
-z       = zeros(1,e.m-1);
-di      = zeros(1,e.m-1);
-do      = zeros(1,e.m-1);
-b       = zeros(1,e.m);
-a       = zeros(1,e.m);
-D       = zeros(1,e.m);
-v_rc    = zeros(1,e.m);
-v_rz    = zeros(1,e.m);
-v_zr    = zeros(1,e.m);
-v_zc    = zeros(1,e.m);
-v_cz    = zeros(1,e.m);
+dr      = zeros(1,e.nShells);
+Ten_c   = zeros(1,e.nShells-1);
+Ten_r   = zeros(1,e.nShells-1);
+e_z     = zeros(1,e.nShells);
+u       = zeros(1,e.nShells);
+Pi      = zeros(1,e.nShells-1);
+Po      = zeros(1,e.nShells-1);
+C1      = zeros(1,e.nShells);
+C2      = zeros(1,e.nShells);
+Q       = zeros(1,e.nShells);
+Q2      = zeros(1,e.nShells);
+z       = zeros(1,e.nShells-1);
+di      = zeros(1,e.nShells-1);
+do      = zeros(1,e.nShells-1);
+b       = zeros(1,e.nShells);
+a       = zeros(1,e.nShells);
+D       = zeros(1,e.nShells);
+v_rc    = zeros(1,e.nShells);
+v_rz    = zeros(1,e.nShells);
+v_zr    = zeros(1,e.nShells);
+v_zc    = zeros(1,e.nShells);
+v_cz    = zeros(1,e.nShells);
 
 % Useful relations
 w = 2*pi*n/60; % rpm to rad/sec conversion
 
 % Calculate Possions ratios for a assumed transversely isotropic material
-for k = 1:1:e.m
+for k = 1:1:e.nShells
 v_rc(k) = e.v_cr(k)*e.Er(k)/e.Ec(k);
 v_rz(k) = e.Er(k)/(2*e.G_rz(k))-1;
 v_zr(k) = v_rz(k);
@@ -39,14 +39,14 @@ v_cz(k) = e.v_cr(k);
 end
 
 % Make Young's modulus quotas and b quota
-for k = 1:1:e.m
+for k = 1:1:e.nShells
 u(k) = sqrt((e.Ec(k)/e.Er(k))*((1-v_rz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)))); % my
 b(k) = (e.v_cr(k)+v_cz(k)*v_zr(k))/(1-v_zc(k)*v_cz(k)); % beta
 a(k) = e.Ec(k)*((e_z(k)*(v_zc(k)-v_zr(k)))/(1-v_zc(k)*v_cz(k))); %alpha
 end
 
 % Interface calc
-for i = 1:1:e.m-1
+for i = 1:1:e.nShells-1
 dr(i) = e.ro(i)-e.ri(i+1);
 end
 % Make sure interferance is positive
@@ -58,15 +58,15 @@ Pd = x;
 % Format inner and outer preassure vectors using Pd
 % Assume same preassure around whole machine
 Pi(1) = 0;
-Po(e.m) = 0;
-for k=1:1:e.m-1
+Po(e.nShells) = 0;
+for k=1:1:e.nShells-1
 Pi(k+1) = Pd(k); 
 Po(k) = Pd(k);
 end
 
 
 % Make C1 C2 and Q constants using eq 2.28 and 2.29 from theory chapter
-for k = 1:1:e.m   
+for k = 1:1:e.nShells   
     
 Q(k) = (e.p(k)*w^2*(3+b(k))/(u(k)^2-9)); %last part of 2.20
 Q2(k) = e.p(k)*w^2*(u(k)^2+3*b(k))/(u(k)^2-9); % last part of 2.22
@@ -84,7 +84,7 @@ end
 
 % Calculate stresses using equations from theory eq 2.20 and 2.22
 % And displacements using general Hooke's law
- for k = 1:1:e.m-1
+ for k = 1:1:e.nShells-1
     
     % Calc shell k+1 inner displacement di
     k=k+1;
@@ -115,7 +115,7 @@ end
 % between inner and outer displacement
 % compared to original shell interferance
 % scaled up by 10^6 so that fsolve do not end prematurly
- for k=1:1:e.m-1
+ for k=1:1:e.nShells-1
  z(k) = (di(k)-do(k)-dr(k))*10^6;
 
  end
