@@ -57,7 +57,7 @@ v_zc(k) = v_rc(k);
 v_cz(k) = e.v_cr(k);
 
 % sweep e_z over range, calcualte energy
-e_z      =(-0.02:0.00001:0.02);
+e_z      =(-0.005:0.00001:-0.001122);
 SE       = zeros(1,length(e_z));
 e_c      = zeros(1,length(e_z));
 e_r      = zeros(1,length(e_z));
@@ -90,27 +90,35 @@ C2(k) = (Q(k)*(e.ro(k)^(u(k)+3)-e.ri(k)^(u(k)+3))+(Po(k)-D(k))*e.ro(k)^(u(k)+1)+
 
     
 % Calc shell stress and strains
-Ten_r(k) = C1(k)*e.ri(k)^(-1-u(k))+C2(k)*e.ri(k)^(-1+u(k))+Q(k)*e.ri(k)^2-D(k)
+Ten_r(k) = C1(k)*e.ri(k)^(-1-u(k))+C2(k)*e.ri(k)^(-1+u(k))+Q(k)*e.ri(k)^2-D(k);
     
 Ten_c(k) = u(k)*(C2(k)*e.ri(k)^(-1+u(k))-C1(k)*e.ri(k)^(-1-u(k)))...
-           +Q2(k)*e.ri(k)^2-D(k)
+           +Q2(k)*e.ri(k)^2-D(k);
 
-Ten_z(k) = e.Er(k)*(e_z(i)+v_rz(k)*Ten_r(k)/e.Er(k)+v_cz(k)*Ten_c(k)/e.Ec(k))
+Ten_z(k) = e.Er(k)*(e_z(i)+v_rz(k)*Ten_r(k)/e.Er(k)+v_cz(k)*Ten_c(k)/e.Ec(k));
     
 e_c(i) = (Ten_c(k)/e.Ec(k))*(1-v_zc(k)*v_cz(k))...
          -(Ten_r(k)/e.Er(k))*(v_rc(k)+v_zc(k)*v_rz(k))-v_zc(k)*e_z(i);
           
 e_r(i) = (Ten_r(k)/e.Er(k))*(1-v_zr(k)*v_rz(k))...
-         -(Ten_c(k)/e.Ec(k))*(e.v_cr(k)+v_zr(k)*v_cz(k))-v_zr(k)*e_z(i); 
+         -(Ten_c(k)/e.Ec(k))*(e.v_cr(k)+v_zr(k)*v_cz(k))-v_zr(k)*e_z(i);
+
+u_r(k) = e_c(i)*e.ri(k);
+u_c(k) = 0;
+u_z(k) = 0;
         
  % Stress, strain calc done
  
  % Calc energy for current strain. Correct????
  % SE(i) = (1/2)*(e.Ec(k)*e_c(i)^2+e.Er(k)*e_r(i)^2+e.Er(k)*e_z(i)^2)...
  %         +e.ri(k)^2*w^2*e.p(k)*e_c(i);
-     
+ 
   SE(i) = (1/2)*(Ten_c(k)*e_c(i)+Ten_r(k)*e_r(i)+Ten_z(k)*e_z(i))...
-         -e.ri(k)^2*w^2*e.p(k)*e_c(i);
+          -e.ri(k)^2*w^2*e.p(k)*e_c(i);
+     
+ % SE(i) = 5.59e5...
+ %       -e.ri(k)^2*w^2*e.p(k)*e_c(i);
+     
    
 end % e_z loop end
   
@@ -118,7 +126,21 @@ end % e_z loop end
   figure(5)
   plot(e_z,SE,'-b')
   hold on
-  %%% HAXXPLOT
+  
+  
+ TEN_CC = Ten_c(k)
+ TEN_RR = Ten_r(k)
+ TEN_ZZ = Ten_z(k)
+ EPS_CC = e_c(i)
+ EPS_RR = e_r(i)
+ EPS_ZZ = e_z(i)
+ RADIUS = e.ri(k)
+ RAD_SPEED = w
+ DENSITY = e.p(k)
+ STRAIN_E_DENS = 0.5*(Ten_c(k)*e_c(i)+Ten_r(k)*e_r(i)+Ten_z(k)*e_z(i))
+ EXTERNAL_E_DENS = e.ri(k)^2*w^2*e.p(k)*e_c(i)
+ 
+ %%% HAXXPLOT
 
   [~,N] = min(SE); % find min energy in interval
   e_zmin = -e_z(N); % what is min energy's e_z, 
